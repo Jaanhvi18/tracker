@@ -1,45 +1,33 @@
-# README
+# Project Name
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Brief project description or introduction.
 
-Things you may want to cover:
+## Table of Contents
 
-* Ruby version
+- [Main Branch Approved Updates](#main-branch-approved-updates)
+- [Branches Changes to Approve](#branches-changes-to-approve)
 
-* System dependencies
+## Main Branch Approved Updates
 
-* Configuration
+Please update this section as we approve changes to the main branch
 
-* Database creation
+### GemFile Changes
 
-* Database initialization
+- RSpec
+- Cucumber
+- SimpleCove
 
-* How to run the test suite
+### Branches Changes to Approve
 
-* Services (job queues, cache servers, search engines, etc.)
+Please update this branch with the progress being made by you (and your partner)
 
-* Deployment instructions
-image: registry.fly.io/empty-violet-1097:deployment-01HDA2GA5N20RPB4YVWQXJ8Q7Q
-image size: 340 MB
+### Iteration Week 1
 
-Watch your deployment at https://fly.io/apps/empty-violet-1097/monitoring
+#### Brian + Lex - Progress
 
-Provisioning ips for empty-violet-1097
-  Dedicated ipv6: 2a09:8280:1::37:90af
-  Shared ipv4: 66.241.125.20
-  Add a dedicated ipv4 with: fly ips allocate-v4
-
-Creating a 1 GB volume named 'data' for process group 'app'. Use 'fly vol extend' to increase its size
-This deployment will:
- * create 1 "app" machine
-
-No machines in group app, launching a new machine
-Finished launching new machines
--------
-NOTE: The machines for [app] have services with 'auto_stop_machines = true' that will be stopped when idling
-
--------
-
-Visit your newly deployed app at https://empty-violet-1097.fly.dev/
-* ...
+- [x] Created model 'Home'
+- [ ] Setting up the Routes for Home
+  ```ruby
+  # This is code
+  root 'home#index'
+  resources :home, only: [:index]
