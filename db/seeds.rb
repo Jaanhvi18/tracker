@@ -9,3 +9,4 @@
 #   end
 
 Review.create!(rating: "5")
+Post.create!(description: "Movie 1")
