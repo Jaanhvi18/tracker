@@ -67,3 +67,14 @@ gem "dockerfile-rails", ">= 1.5", :group => :development
 gem "sentry-ruby", "~> 5.12"
 
 gem "sentry-rails", "~> 5.12"
+
+gem 'rspec-rails'
+gem 'rspec'
+gem 'simplecov', require: false
+
+group :test do
+  gem 'capybara'
+  gem 'selenium-webdriver'
+  gem 'webdrivers', '~> 4.0', require: true
+  gem 'cucumber-rails', require: false
+end
