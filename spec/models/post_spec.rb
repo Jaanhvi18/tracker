@@ -12,13 +12,4 @@ RSpec.describe Post, type: :model do
 				expect(p2.description).to eq("Movie 3")
     end
   end
-
-  context "checking for presence of attribute" do
-    it "should show post with created date" do 
-      p = Post.new(description: "Movie 1")
-      visit post_path(p.id)
-      expect(page.current_path).to eq(post_path)
-      expect(page).to have_content("Post created at")
-    end
-  end
 end

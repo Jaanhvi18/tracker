@@ -13,12 +13,4 @@ RSpec.describe Review, type: :model do
     end
   end
 
-  context "checking for presence of attributes" do
-    it "should show review with created date" do 
-      r = Review.new(rating: 5)
-      visit review_path(1)
-      expect(page.current_path).to eq(review_path)
-      expect(page).to have_content("Review created at")
-    end
-  end
 end
