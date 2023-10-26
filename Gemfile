@@ -47,6 +47,7 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
+  gem "rspec-rails", '~> 5.0'
 end
 
 group :development do
@@ -68,8 +69,6 @@ gem "sentry-ruby", "~> 5.12"
 
 gem "sentry-rails", "~> 5.12"
 
-gem 'rspec-rails'
-gem 'rspec'
 gem 'simplecov', require: false
 
 group :test do
