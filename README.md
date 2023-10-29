@@ -31,3 +31,10 @@ Please update this branch with the progress being made by you (and your partner)
   # This is code
   root 'home#index'
   resources :home, only: [:index]
+
+
+#### Jaanhvi - Progress
+  - [x] Created model 'User'
+  - [x] Created model 'Profile'
+  - [x] Updated associations between models
+  - [x] Set up the foreign key relationship between profiles and users
