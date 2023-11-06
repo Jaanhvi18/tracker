@@ -48,6 +48,7 @@ group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri windows ]
   gem "rspec-rails", '~> 5.0'
+  gem 'simplecov', require: false
 end
 
 group :development do
@@ -69,11 +70,10 @@ gem "sentry-ruby", "~> 5.12"
 
 gem "sentry-rails", "~> 5.12"
 
-gem 'simplecov', require: false
-
 group :test do
   gem 'capybara'
   gem 'selenium-webdriver'
   gem 'webdrivers', '~> 4.0', require: true
   gem 'cucumber-rails', require: false
+  gem 'database_cleaner'
 end
