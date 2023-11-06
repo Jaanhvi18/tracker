@@ -1,0 +1,76 @@
+body {
+    font-family: Arial, sans-serif;
+    height: 100vh; /* Make the body take the full viewport height */
+    display: flex;
+    flex-direction: column; /* Stack child elements vertically */
+}
+/* Styling for the top bar */
+.top-bar {
+    background-color: #3498DB;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+}
+/* Styling for the main content container */
+.content {
+    flex: 1; /* Make the content container expand to fill available vertical space */
+    display: flex;
+}
+/* Styling for the left division */
+.left-division {
+    flex: 1;
+    background-color: #F2F2F2;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+/* Styling for the right division */
+.right-division {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Center content vertically */
+    align-items: center; /* Center content horizontally */
+}
+
+.circular-image {
+    width: 150px; /* Set the width and height to create a circle */
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    max-width: 100%; /* Ensures the image fits within the container */
+    height: auto; /* Maintains aspect ratio */
+    box-shadow: 0 0 0 5px #000; /* Adds a black outline with a 5px width */
+    margin: 2%;
+}
+
+.button {
+    display: inline-block;
+    padding: 10px 20px; /* Adjust the padding to your preferred size */
+    background-color: #3498DB; /* Button background color */
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove the default link underline */
+    border: 1px solid #3498DB; /* Button border color */
+    border-radius: 5px; /* Rounded corners for the button */
+    font-weight: bold; /* Make the text bold */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+    margin: 1%;
+}
+.button:hover {
+    background-color: #258CD1; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* On screens with a maximum width of 768px, stack divisions vertically */
+    .content {
+        flex-direction: column;
+    }
+}
+
+

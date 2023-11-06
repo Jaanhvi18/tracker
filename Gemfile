@@ -63,6 +63,10 @@ group :development do
 
 end
 
+group :assets do
+  gem 'sassc'
+end
+
 
 gem "dockerfile-rails", ">= 1.5", :group => :development
 

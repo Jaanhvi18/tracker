@@ -1,7 +1,23 @@
-<h1>Dashboards#index</h1>
-<p>Find me in app/views/dashboards/index.html.erb</p>
+<%= stylesheet_link_tag "dashboards" %>
 
-<h1 class = "testing" >Home#index</h1>
-<%= link_to "Gallery", root_path %>
-<br>
-<%= link_to "Go To Profile", root_path %>
+<!-- Top Bar -->
+<div class="top-bar">
+  <h1>Tracker</h1>
+</div>
+<!-- Main Content Container -->
+<div class="content">
+  <!-- Left Division -->
+  <div class="left-division">
+    <h2>Gallery</h2>
+    <img src="https://static.vecteezy.com/system/resources/previews/024/402/893/non_2x/stars-capes-galaxy-screenshot-and-wallpaper-in-the-style-of-whimsical-cartoon-style-light-blue-and-magenta-luminous-spheres-toycore-mysterious-forms-generat-ai-free-photo.jpg" alt="Image Description" class="circular-image"> <!-- need to add a profile image -->
+    <%= link_to "Browse All", root_path, class: "button" %>
+    <%= link_to "Browse Network", root_path, class: "button" %>
+  </div>
+  <!-- Profile -->
+  <div class="right-division">
+    <h2>Right Division</h2>
+    <img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="Image Description" class="circular-image"> <!-- need to add a profile image -->
+    <%= link_to "Go To Profile", root_path, class: "button" %>
+    <%= link_to "Create A Post", root_path, class: "button" %>
+  </div>
+</div>
