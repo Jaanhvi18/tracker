@@ -1,4 +1,35 @@
+# class users
 class User < ApplicationRecord
-    has_one :profile
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
+  # :registerable, :recoverable, :validatable
 
+  has_one :user
+  has_many :reviews
+  
+  devise :database_authenticatable, :rememberable
+  devise :omniauthable, omniauth_providers: %i[github]
+
+  def admin?
+    admin
+  end
+
+  def self.from_omniauth(auth_hash)
+    email = auth_hash['info']['email']
+    uid = auth_hash['uid']
+
+    user = User.find_by(email:)
+
+    if user
+      user.uid = uid
+      user.provider = 'github'
+    else
+
+      user = User.new(email:, uid:, provider: 'github')
+      user.password = Devise.friendly_token[0, 20]
+    end
+
+    user.save! if user.changed?
+    user
+  end
 end

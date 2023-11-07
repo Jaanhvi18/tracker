@@ -81,3 +81,11 @@ group :test do
   gem 'cucumber-rails', require: false
   gem 'database_cleaner'
 end
+gem "devise", "~> 4.9"
+
+gem 'omniauth-github'
+
+
+
+gem 'omniauth-rails_csrf_protection'
+

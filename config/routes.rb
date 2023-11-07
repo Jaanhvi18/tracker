@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  get 'profiles/show'
+  devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
+
+
+
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
   # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
@@ -9,5 +14,12 @@ Rails.application.routes.draw do
   # root "posts#index"
   root 'dashboards#index'
 
+  resource :profile, only: [:show]
   resources :reviews, :posts
+
+
 end
+
+
+
+
