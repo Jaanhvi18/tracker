@@ -8,5 +8,6 @@
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
 
+Profile.create!()
 Review.create!(rating: "5")
 Post.create!(description: "Movie 1")
