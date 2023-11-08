@@ -1,4 +1,5 @@
 # class users
+# frozen_string_literal: true
 class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
@@ -9,6 +10,19 @@ class User < ApplicationRecord
   
   devise :database_authenticatable, :rememberable
   devise :omniauthable, omniauth_providers: %i[github]
+  devise :database_authenticatable, :registerable,
+       :recoverable, :rememberable, :validatable
+
+
+  def self.new_with_session(params, session)
+    super.tap do |user|
+      if data = session["devise.github_data"] && session["devise.github_data"]["extra"]["raw_info"]
+        user.email = data["email"] if user.email.blank?
+      end
+    end
+  end
+
+
 
   def admin?
     admin
