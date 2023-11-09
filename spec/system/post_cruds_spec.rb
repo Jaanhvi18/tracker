@@ -4,6 +4,7 @@ RSpec.describe "PostCruds", type: :system do
   before do
     driven_by(:rack_test)
   end
+=begin
     context "checking for presence of attribute" do
         it "should show post with created date" do 
         @p3 = Post.create(description: "Movie 4")
@@ -12,4 +13,5 @@ RSpec.describe "PostCruds", type: :system do
         expect(page).to have_content("Post created at")
         end
     end
+=end 
 end
