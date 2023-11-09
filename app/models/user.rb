@@ -6,7 +6,7 @@ class User < ApplicationRecord
   # :registerable, :recoverable, :validatable
 
   has_one :user
-  has_many :reviews
+  has_many :posts
   
   devise :database_authenticatable, :rememberable
   devise :omniauthable, omniauth_providers: %i[github]

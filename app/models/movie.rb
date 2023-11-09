@@ -1,2 +1,3 @@
-class Movie < Entertainment
+class Movie < ApplicationRecord
+    has_many :posts
 end

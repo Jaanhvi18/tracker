@@ -4,8 +4,13 @@ class CreatePosts < ActiveRecord::Migration[7.1]
       t.datetime :published
       t.string :timestamps
       t.text :description
+      
+      t.references :movie
+      t.references :show
+      t.references :game
+      t.references :user, null: false , foreign_key: true
+
       t.timestamps
-      t.references :entertainment
     end
   end
 end

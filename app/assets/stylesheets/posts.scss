@@ -8,6 +8,7 @@
 }
 
 .speech-bubble {
+    padding: 10%;
     flex: 1;
     padding: 20px;
     position: relative;
@@ -17,6 +18,16 @@
     max-height: 100%;
     overflow: auto;
 }
+
+.entertainment-image{
+    width: 35%;
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: auto;
+}
+
 .movie-title {
     font-weight: bold;
 }
@@ -31,11 +42,11 @@ a {
 .rating {
     margin-top: 10px;
     font-size: 20px;
-    color: #ffc107;
+    color: #FFC107;
 }
 
 .user-info-bar{
-  position: flex;
+  position: auto;
   bottom: 0;
   left: 0;
   padding: 10px; /* Adjust the padding as needed */
@@ -60,7 +71,7 @@ a {
 
 button {
     padding: 5px 10px;
-    background-color: #007bff;
+    background-color: #007BFF;
     color: white;
     border: none;
     cursor: pointer;

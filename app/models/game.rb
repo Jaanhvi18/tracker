@@ -1,2 +1,3 @@
-class Game < Entertainment
+class Game < ApplicationRecord
+    has_many :posts
 end

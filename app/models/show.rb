@@ -1,2 +1,3 @@
-class Show < Entertainment
+class Show < ApplicationRecord
+    has_many :posts
 end

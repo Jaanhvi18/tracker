@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_08_001144) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_08_233037) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -39,23 +39,26 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_08_001144) do
     t.index ["blob_id", "variation_digest"], name: "index_active_storage_variant_records_uniqueness", unique: true
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "post_id", null: false
+    t.text "body"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["post_id"], name: "index_comments_on_post_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "dashboards", force: :cascade do |t|
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
-  create_table "entertainments", force: :cascade do |t|
-    t.string "title"
-    t.text "description"
-    t.date "release_date"
-    t.text "genre"
-    t.string "entertainment_type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "games", force: :cascade do |t|
+    t.string "name"
+    t.date "release_date"
+    t.text "description"
     t.string "platform"
     t.string "ESRB_rating"
     t.decimal "price"
@@ -64,6 +67,9 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_08_001144) do
   end
 
   create_table "movies", force: :cascade do |t|
+    t.string "name", null: false
+    t.date "release_date"
+    t.text "description"
     t.time "duration"
     t.string "language"
     t.string "director"
@@ -75,8 +81,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_08_001144) do
     t.datetime "published"
     t.string "timestamps"
     t.text "description"
+    t.integer "movie_id"
+    t.integer "show_id"
+    t.integer "game_id"
+    t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["game_id"], name: "index_posts_on_game_id"
+    t.index ["movie_id"], name: "index_posts_on_movie_id"
+    t.index ["show_id"], name: "index_posts_on_show_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -88,15 +102,10 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_08_001144) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-  create_table "reviews", force: :cascade do |t|
-    t.integer "rating"
-    t.datetime "published"
-    t.string "timestamps"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "shows", force: :cascade do |t|
+    t.string "name"
+    t.date "release_date"
+    t.text "description"
     t.integer "episodes"
     t.integer "seasons"
     t.string "director"
@@ -121,5 +130,8 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_08_001144) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "comments", "posts"
+  add_foreign_key "comments", "users"
+  add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
 end
