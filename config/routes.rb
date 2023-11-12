@@ -24,6 +24,9 @@ Rails.application.routes.draw do
   end
   resources :users, only: [:show]
 
+  resources :profiles do
+    resources :posts, only: [:new, :create]
+  end
 
 
 end
