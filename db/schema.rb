@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_11_07_202924) do
+ActiveRecord::Schema[7.1].define(version: 2023_11_08_001144) do
   create_table "active_storage_attachments", force: :cascade do |t|
     t.string "name", null: false
     t.string "record_type", null: false
@@ -45,12 +45,40 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_07_202924) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "entertainments", force: :cascade do |t|
+    t.string "title"
+    t.text "description"
+    t.date "release_date"
+    t.text "genre"
+    t.string "entertainment_type"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "games", force: :cascade do |t|
+    t.string "platform"
+    t.string "ESRB_rating"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "movies", force: :cascade do |t|
+    t.time "duration"
+    t.string "language"
+    t.string "director"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "posts", force: :cascade do |t|
     t.datetime "published"
     t.string "timestamps"
     t.text "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "entertainment_id"
+    t.index ["entertainment_id"], name: "index_posts_on_entertainment_id"
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -66,6 +94,19 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_07_202924) do
     t.integer "rating"
     t.datetime "published"
     t.string "timestamps"
+    t.integer "entertainment_id"
+    t.integer "post_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["entertainment_id"], name: "index_reviews_on_entertainment_id"
+    t.index ["post_id"], name: "index_reviews_on_post_id"
+  end
+
+  create_table "shows", force: :cascade do |t|
+    t.integer "episodes"
+    t.integer "seasons"
+    t.string "director"
+    t.boolean "on_going"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

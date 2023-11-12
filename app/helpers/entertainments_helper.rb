@@ -1,0 +1,2 @@
+module EntertainmentsHelper
+end
