@@ -3,14 +3,14 @@
     <div class="content-wrapper content">
 
     <div class="movie-info left-division">
-      <p class="movie-title">Movie 2</p>
+      <p class="movie-title"><%= @post.movie.description %></p>
       <a href="#"><img src="https://www.peacocktv.com/dam/growth/assets/Campaign/FiveNightsAtFreddys/fnaf-vertical-key-art.jpg" alt="Movie Image" class= "entertainment-image"></a>
       <div class="rating">
-          <p class="stars">★★★★☆</p>
+          <p class="stars"><%= @post.movie.director %></p>
       </div>
     </div>
     <div class="text-box right-division">
-      <p>blah blah blah blah </p>
+      <p><%= @post.description %></p>
     </div>
     </div>
   </div>
@@ -19,8 +19,8 @@
   <div class="user-info">
     <img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="User Image" class="circular-image">
     <div class="user-details">
-      <p class="username">Example Username</p>
-      <button>View this Profile</button>
+      <p class="username"><%= @post.user.email %></p>
+      <%= link_to "View this Profile", user_path(@post.user), class: "button" %>
     </div>
   </div>
 </div>

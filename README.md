@@ -61,6 +61,28 @@ Please update this branch with the progress being made by you (and your partner)
   - [x] Created testing for 'Post' -- *Testing works*
   - [x] Created testing for 'Review' -- *Testing works*
 
+### Iteration Week 2
 
+#### Brian + Lex - Progress
+- [x] worked on views for the following
+    - Dashboard index view
+    - posts show view
+    - new post form view
+    - profile show view
+- [x] tests for the general naviagtion between pages
+
+#### Jaanhvi - Progress
+- [x] Set up user authentication
+- [x] Deleted profile model and changed it for just a user model
+- [x] set up the sign up and sign in form
+
+#### Cris + Edna - Progress
+  - [x] Created the movie model
+  - [x] Created the game model
+  - [x] Created the series model
+  - [x] Removed review model, instead opted for a post model and comments to include in posts
+  - [x] set up the relationships between the models and validations
+
+### Resources:
 export GITHUB_APP_ID="1c6625a9cb4a6834e127"
 export GITHUB_APP_SECRET="23109d667e6c816571c90ceaaccef8fbe54c26cf"

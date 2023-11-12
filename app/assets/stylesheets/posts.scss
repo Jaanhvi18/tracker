@@ -69,12 +69,19 @@ a {
     font-weight: bold;
 }
 
-button {
+.button {
     padding: 5px 10px;
     background-color: #007BFF;
     color: white;
     border: none;
     cursor: pointer;
+    text-decoration: none; /* Ensure button text is not underlined */
+    display: inline-block; /* Display the button inline */
+    border-radius: 5px; /* Add some border radius for a rounded look */
+}
+
+.button:hover {
+    background-color: #0056b3; /* Change background color on hover */
 }
 
 .scrolling-text-box {

@@ -19,7 +19,10 @@ Rails.application.routes.draw do
   root 'dashboards#index'
 
   resource :profile, only: [:show]
-  resources :reviews, :posts
+  resources :posts do
+    resources :user, only: [:show], as: :user
+  end
+  resources :users, only: [:show]
 
 
 
