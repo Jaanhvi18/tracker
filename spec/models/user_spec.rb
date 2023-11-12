@@ -37,6 +37,4 @@ RSpec.describe User, type: :model do
       expect(new_user).not_to be_valid
     end
   end
-
-  # Additional tests for any custom methods or validations in your User model
 end
