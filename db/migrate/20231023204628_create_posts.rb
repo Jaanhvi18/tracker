@@ -4,6 +4,7 @@ class CreatePosts < ActiveRecord::Migration[7.1]
       t.datetime :published
       t.string :timestamps
       t.text :description
+      t.integer :stars
       
       t.references :movie
       t.references :show

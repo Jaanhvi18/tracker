@@ -21,6 +21,9 @@ Rails.application.routes.draw do
   resource :profile, only: [:show]
   resources :reviews, :posts
 
+  resources :profiles do
+    resources :posts, only: [:new, :create]
+  end
 
 
 end
