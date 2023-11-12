@@ -13,7 +13,7 @@
   </head>
 
   <body>
-        <section id="auth" class="container">
+    <section id="auth">
       <% if user_signed_in? %>
         <div class="row alert alert-dark">
           <div class="col-md-10">
@@ -28,19 +28,19 @@
           <div class="col-md-10">
             <p> Hello, guest</p>
           </div>
-            <div class="col-md-2">
+          <div class="col-md-2">
             <%= link_to "Sign up", new_user_registration_path, class: "btn btn-primary" %>
           </div>
           <div class="col-md-2">
             <%= link_to "Sign in", new_user_session_path, class: "btn btn-primary" %>
           </div>
           <div class="col-md-2">
-            <%= button_to "Sign in With Github",  user_github_omniauth_authorize_path,data: {turbo: false} %>
-            </div>
+            <%= button_to "Sign in With Github", user_github_omniauth_authorize_path, data: { turbo: false }, class: "btn btn-primary" %>
+          </div>
         </div>
       <% end %>
     </section>
-    <section id="flash" class="container">
+    <section id="flash">
       <% if flash[:notice] %>
         <div class="alert alert-info">
           <%= flash[:notice] %>
@@ -56,5 +56,3 @@
     <%= yield %>
   </body>
 </html>
-
-
