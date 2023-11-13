@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 # app/controllers/profiles_controller.rb
 class ProfilesController < ApplicationController
   before_action :authenticate_user!
@@ -7,7 +7,7 @@ class ProfilesController < ApplicationController
     @user = current_user
   end
 end
-=======
+
 class ProfilesController < ApplicationController
     before_action :authenticate_user!
 
@@ -17,4 +17,4 @@ class ProfilesController < ApplicationController
         @posts = @user.posts
     end
 end
->>>>>>> origin/testingLex
+
