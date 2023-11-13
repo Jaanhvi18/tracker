@@ -16,7 +16,7 @@
     <% @posts.each do |post| %>
       <div class="playing-card">
       <div class="post-wrapper">
-        <h2><%= post.id %></h2>
+      <h2><%= link_to post.id, post_path(post) %></h2>
         <p>Description: <%= post.description %></p>
         <p>Stars: no stars at the moment</p>
         <!-- Add other attributes as needed -->
