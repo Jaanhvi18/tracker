@@ -70,7 +70,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_08_233037) do
     t.string "name", null: false
     t.date "release_date"
     t.text "description"
-    t.integer "duration"
+    t.time "duration"
     t.string "language"
     t.string "director"
     t.datetime "created_at", null: false
@@ -81,20 +81,16 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_08_233037) do
     t.datetime "published"
     t.string "timestamps"
     t.text "description"
-    t.integer "stars"
     t.integer "movie_id"
     t.integer "show_id"
     t.integer "game_id"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-<<<<<<< HEAD
     t.index ["game_id"], name: "index_posts_on_game_id"
     t.index ["movie_id"], name: "index_posts_on_movie_id"
     t.index ["show_id"], name: "index_posts_on_show_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
-=======
->>>>>>> userAuth
   end
 
   create_table "profiles", force: :cascade do |t|
@@ -106,17 +102,6 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_08_233037) do
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
-<<<<<<< HEAD
-=======
-  create_table "reviews", force: :cascade do |t|
-    t.integer "rating"
-    t.datetime "published"
-    t.string "timestamps"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
->>>>>>> userAuth
   create_table "shows", force: :cascade do |t|
     t.string "name"
     t.date "release_date"
