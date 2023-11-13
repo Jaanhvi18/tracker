@@ -9,6 +9,7 @@ The Tracker App is a user-friendly platform for entertainment enthusiasts to sha
 - [Main Branch Approved Updates](#main-branch-approved-updates)
 - [Branches Changes to Approve](#branches-changes-to-approve)
   - [Iteration 1](#iteration-week-1)
+- Deployment 
 
 ## Main Branch Approved Updates
 
@@ -60,7 +61,7 @@ Please update this branch with the progress being made by you (and your partner)
   - [x] Created model 'Post'
   - [x] Created testing for 'Post' -- *Testing works*
   - [x] Created testing for 'Review' -- *Testing works*
-
-
-export GITHUB_APP_ID="1c6625a9cb4a6834e127"
-export GITHUB_APP_SECRET="23109d667e6c816571c90ceaaccef8fbe54c26cf"
+#### Deployment 
+  Link to view our deployment:  https://empty-violet-1097.fly.dev/
+  -[x] export GITHUB_APP_ID="1c6625a9cb4a6834e127"
+  -[x] export GITHUB_APP_SECRET="23109d667e6c816571c90ceaaccef8fbe54c26cf"
