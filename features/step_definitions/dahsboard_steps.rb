@@ -1,3 +1,13 @@
+Given("there is a valid user with the email peterparker@mcu.com") do
+    @user = FactoryBot.create(:user, email: "peterparker@mcu.com")
+end
+
+When('I press {string}') do |button|
+    click_on button
+    # Write code here that turns the phrase above into concrete actions
+  end
+
+
 Given("I am on the home index of dashboards path") do
     visit root_path
 end
@@ -17,3 +27,7 @@ end
 Then("I should not see {string}") do |content|
     expect(page).not_to have_content(content)
 end
+
+
+
+

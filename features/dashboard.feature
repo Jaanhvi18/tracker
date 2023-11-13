@@ -1,10 +1,15 @@
 Feature: Dashboard
 
 
-Scenario: Visiting the home index of the dashboards page
-  Given I am on the home index of dashboards path
-  Then I should see "Gallery"
+Scenario: Visiting the profile page from the dashboards page
+  Given there is a valid user with the email peterparker@mcu.com
+  When I press "Go To Profile"
+  Then I am on the profile page path 
   And I should see "Profile"
+
+
+
+
 
 Scenario: Visiting the Gallery page
   Given I am on the gallery page path
