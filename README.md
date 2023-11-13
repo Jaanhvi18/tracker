@@ -9,7 +9,7 @@ The Tracker App is a user-friendly platform for entertainment enthusiasts to sha
 - [Main Branch Approved Updates](#main-branch-approved-updates)
 - [Branches Changes to Approve](#branches-changes-to-approve)
   - [Iteration 1](#iteration-week-1)
-- Deployment 
+  - [Iteration 2](#iteration-week-2)
 
 ## Main Branch Approved Updates
 
@@ -64,6 +64,28 @@ Please update this branch with the progress being made by you (and your partner)
 #### Deployment 
   Link to view our deployment:  https://empty-violet-1097.fly.dev/
 
-  
-  -[x] export GITHUB_APP_ID="1c6625a9cb4a6834e127"
-  -[x] export GITHUB_APP_SECRET="23109d667e6c816571c90ceaaccef8fbe54c26cf"
+### Iteration Week 2
+
+#### Brian + Lex - Progress
+- [x] worked on views for the following
+    - Dashboard index view
+    - posts show view
+    - new post form view
+    - profile show view
+- [x] tests for the general naviagtion between pages
+
+#### Jaanhvi - Progress
+- [x] Set up user authentication
+- [x] Deleted profile model and changed it for just a user model
+- [x] set up the sign up and sign in form
+
+#### Cris + Edna - Progress
+  - [x] Created the movie model
+  - [x] Created the game model
+  - [x] Created the series model
+  - [x] Removed review model, instead opted for a post model and comments to include in posts
+  - [x] set up the relationships between the models and validations
+
+### Resources:
+export GITHUB_APP_ID="1c6625a9cb4a6834e127"
+export GITHUB_APP_SECRET="23109d667e6c816571c90ceaaccef8fbe54c26cf"

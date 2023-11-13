@@ -1,3 +1,0 @@
-class Entertainment < ApplicationRecord
-
-end

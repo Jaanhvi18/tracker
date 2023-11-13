@@ -1,0 +1,30 @@
+<!-- app/views/posts/new.html.erb -->
+<h1 class="create-title">Create a New Post</h1>
+<div class="form-wrapper">
+<%= form_with(model: @post, url: posts_path, method: :post) do |form| %>
+  <div>
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :media_type %>
+    <%= form.select :media_type, ['game', 'movie', 'show'] %>
+  </div>
+
+  <div>
+    <%= form.label :stars %>
+    <%= form.number_field :stars, in: 0..5 %>
+  </div>
+
+  <div>
+    <%= form.label :description %>
+    <%= form.text_area :description %>
+  </div>
+
+  <div>
+    <%= form.submit 'Create Post' %>
+  </div>
+<% end %>
+<%= link_to 'Back', profile_path, class: 'back-button' %> 
+</div>
