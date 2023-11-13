@@ -14,4 +14,11 @@ RSpec.describe "PostCruds", type: :system do
         end
     end
 =end 
+
+  it 'stays on homepage if user not logged in' do
+    visit root_path
+    click_on "Create A Post"
+    expect(page). to have_current_path(root_path)
+  end
+
 end

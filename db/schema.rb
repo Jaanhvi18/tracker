@@ -70,7 +70,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_08_233037) do
     t.string "name", null: false
     t.date "release_date"
     t.text "description"
-    t.time "duration"
+    t.integer "duration"
     t.string "language"
     t.string "director"
     t.datetime "created_at", null: false
