@@ -89,13 +89,15 @@ main {
   color: white;
   text-align: center;
   padding: 10px;
-  height: 15%;
+  height: 80px; /* Set your desired height here */
   width: 100%;
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
 }
-
 .bottom-bar a {
   color: white;
   text-decoration: none;

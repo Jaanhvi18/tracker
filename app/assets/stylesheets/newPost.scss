@@ -1,96 +1,43 @@
-.top-bar {
-    background-color: #3498DB;
-    color: #fff;
+.create-title {
     text-align: center;
-    padding: 10px;
+    padding: 5%;
     font-size: 24px;
 }
-.create-title{
-    
-}
 
-.content {
-    flex: 1;
+.form-wrapper {
     display: flex;
-}
-
-.left-division {
-    flex: 1;
-    background-color: #F2F2F2;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-}
-
-.right-division {
-    flex: 1;
-    padding: 20px;
-    display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    margin-top: 20px;
 }
 
-.circular-image {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    max-width: 50%;
-    height: auto;
-    box-shadow: 0 0 0 5px #000;
-    margin: 2%;
-}
-
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #3498DB;
-    color: #fff;
-    text-decoration: none;
-    border: 1px solid #3498DB;
+.form-wrapper form {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    border: 1px solid #ccc;
     border-radius: 5px;
-    font-weight: bold;
-    transition: background-color 0.3s, color 0.3s;
-    margin: 1%;
 }
 
-.button:hover {
-    background-color: #258CD1;
-    color: #fff;
-}
-
-/* Add styles for form elements */
-form {
-    margin: 20px; /* Add some spacing around the form */
-}
-
-form label {
+.form-wrapper form label {
     font-weight: bold;
     margin-bottom: 8px;
 }
 
-form input[type="text"],
-form select,
-form input[type="number"],
-form textarea {
+.form-wrapper form input[type="text"],
+.form-wrapper form select,
+.form-wrapper form input[type="number"],
+.form-wrapper form textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
     border: 1px solid #ccc;
     border-radius: 5px;
+    height: 50px;
 }
 
-form input[type="text"],
-form input[type="number"],
-form textarea {
-    height: 40px;
-}
-
-/* Style the submit button */
-form input[type="submit"] {
+.form-wrapper form input[type="submit"] {
     background-color: #3498DB;
     color: #fff;
     border: none;
@@ -100,6 +47,27 @@ form input[type="submit"] {
     cursor: pointer;
 }
 
+.form-wrapper form input[type="submit"]:hover {
+    background-color: #258CD1;
+}
+
+.back-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #3498DB;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #3498DB;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin: 5%;
+}
+
+/* Hover styles for the back button */
+.back-button:hover {
+    background-color: #258CD1;
+}
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
     .content {

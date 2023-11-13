@@ -11,7 +11,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new()
     @post.user = current_user
-    #@post.stars = post_params[:stars] ---> we dont have stars yet
+    @post.stars = post_params[:stars]
     @post.description = post_params[:description]
     # if post_params[:media_type] == "movie"
     #   @post.movie = Movie.new(post_params[:title])
