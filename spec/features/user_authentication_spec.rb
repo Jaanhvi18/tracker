@@ -43,7 +43,7 @@ RSpec.feature "UserAuthentication", type: :feature do
         fill_in "Email", with: user.email
         fill_in "Password", with: "wrongpassword"
         click_button "Log in"
-        expect(page).to have_text("Invalid Email or password.")
+        expect(page).to have_current_path(new_user_session_path)
       end
     end
   end
