@@ -7,11 +7,6 @@ class Post < ApplicationRecord
     validate :at_least_one_association # doesn't need all foreign keys present 
 
 
-
-
-
-
-
     private
     def at_least_one_association
       unless movie_id.present? || game_id.present? || show_id.present?
