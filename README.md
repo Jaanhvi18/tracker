@@ -87,6 +87,6 @@ Please update this branch with the progress being made by you (and your partner)
   - [x] set up the relationships between the models and validations
 
 ### Resources:
-shell script automated terminal command: source git.sh
-export GITHUB_APP_ID="1c6625a9cb4a6834e127"
-export GITHUB_APP_SECRET="23109d667e6c816571c90ceaaccef8fbe54c26cf"
+- shell script automated terminal command: source git.sh
+- export GITHUB_APP_ID="1c6625a9cb4a6834e127"
+- export GITHUB_APP_SECRET="23109d667e6c816571c90ceaaccef8fbe54c26cf"
