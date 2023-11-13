@@ -1,0 +1,61 @@
+/* Styling for the top bar */
+.top-bar {
+    background-color: #3498DB;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 24px;
+}
+
+/* Styling for the container wrapping authentication section */
+.github-container {
+    background-color: #f4f7f6; // Using the global background color for consistency
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 2rem;
+}
+
+/* Styling for the authentication section */
+.alert {
+    background-color: #F2F2F2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
+
+/* Styling for the buttons in the authentication section */
+.btn {
+    padding: 10px 20px;
+    background-color: #3498DB;
+    color: #fff;
+    text-decoration: none;
+    border: 1px solid #3498DB;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+    margin: 5px;
+}
+
+.btn:hover {
+    background-color: #258CD1;
+}
+
+/* Styling for the flash messages */
+.alert.alert-info {
+    background-color: #3498DB;
+    color: #fff;
+}
+
+.alert.alert-warning {
+    background-color: #FFA500;
+    color: #fff;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* On screens with a maximum width of 768px, stack divisions vertically */
+    .container {
+        margin: 10px;
+    }
+}
