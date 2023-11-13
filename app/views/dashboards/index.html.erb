@@ -17,7 +17,9 @@
     <h2>Profile</h2>
     <img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="Image Description" class="circular-image"> <!-- need to add a profile image -->
     <%= link_to "Go To Profile", profile_path, class: "button" %>
-    <%= link_to "Create A Post", root_path, class: "button" %>
+    <% if current_user %>
+      <%= link_to "Create A Post", new_post_path, class: "button" %>
+    <% end %>
   </div>
 </div>
 
