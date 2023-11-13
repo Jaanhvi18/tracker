@@ -81,6 +81,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_11_08_233037) do
     t.datetime "published"
     t.string "timestamps"
     t.text "description"
+    t.integer "stars"
     t.integer "movie_id"
     t.integer "show_id"
     t.integer "game_id"

@@ -9,6 +9,7 @@ The Tracker App is a user-friendly platform for entertainment enthusiasts to sha
 - [Main Branch Approved Updates](#main-branch-approved-updates)
 - [Branches Changes to Approve](#branches-changes-to-approve)
   - [Iteration 1](#iteration-week-1)
+  - [Iteration 2](#iteration-week-2)
 
 ## Main Branch Approved Updates
 

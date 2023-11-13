@@ -1,11 +1,32 @@
-<!-- app/views/profiles/show.html.erb -->
-<h1>Profile</h1>
+<header>
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="Profile Photo" class="circular-image">
+  <% name = @user.email.match(/^(.*)@/) %>
+  <p>Hi, <%= name[1] %>!</p>
+</header>
 
+<main>
+  <div class="carousel">
+    <!-- Big button in the middle of the carousel -->
+    <a href="<%= new_post_path %>" class="add-post-button">
+      <div class="playing-card">
+        +
+      </div>
+    </a>
+    <!-- Other posts will be dynamically loaded here -->
+    <% @posts.each do |post| %>
+      <div class="playing-card">
+        <h2><%= post.title %></h2>
+        <p>Stars: <%= post.stars %></p>
+        <p>Description: <%= post.description %></p>
+        <!-- Add other attributes as needed -->
+      </div>
+    <% end %>
+  </div>
+</main>
 
-<p>Email: <%= @user.email %></p>
-
-
-
-
-
+<div class="bottom-bar">
+  <a href="<%= root_path %>">Gallery</a>
+  <a href="<%= root_path %>">Dashboards</a>
+  <a href="<%= profile_path %>">Profile</a>
+</div>
 
