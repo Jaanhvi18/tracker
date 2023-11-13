@@ -3,9 +3,10 @@ Given("there is a valid user with the email peterparker@mcu.com") do
 end
 
 When('I press {string}') do |button|
-    click_on button
+    puts page.body
+    click_link button
     # Write code here that turns the phrase above into concrete actions
-  end
+end
 
 
 Given("I am on the home index of dashboards path") do
