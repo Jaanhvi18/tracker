@@ -6,6 +6,7 @@ class Post < ApplicationRecord
     has_many :comments
     validate :at_least_one_association # doesn't need all foreign keys present 
 
+    attr_accessor :stars
 
     private
     def at_least_one_association

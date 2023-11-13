@@ -12,9 +12,6 @@
  *
  *= require_tree .
  *= require_self
-<<<<<<< HEAD
- */
-=======
  */
 .btn-primary {
     background: none; /* Remove the background color */
@@ -27,4 +24,3 @@
     box-shadow: none;
 }
 
->>>>>>> userAuth
