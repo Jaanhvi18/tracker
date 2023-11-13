@@ -15,10 +15,12 @@
     <!-- Other posts will be dynamically loaded here -->
     <% @posts.each do |post| %>
       <div class="playing-card">
-        <h2><%= post.title %></h2>
-        <p>Stars: <%= post.stars %></p>
+      <div class="post-wrapper">
+        <h2><%= post.id %></h2>
         <p>Description: <%= post.description %></p>
+        <p>Stars: no stars at the moment</p>
         <!-- Add other attributes as needed -->
+        </div>
       </div>
     <% end %>
   </div>

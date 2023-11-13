@@ -9,9 +9,9 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post.user = current_user
     @post = Post.new()
-    @post.stars = post_params[:stars]
+    @post.user = current_user
+    #@post.stars = post_params[:stars] ---> we dont have stars yet
     @post.description = post_params[:description]
     # if post_params[:media_type] == "movie"
     #   @post.movie = Movie.new(post_params[:title])
@@ -22,11 +22,11 @@ class PostsController < ApplicationController
     # end
     case post_params[:media_type]
     when "movie"
-      @post.movie = Movie.new(:name => post_params[:title])
+      @post.movie = Movie.create(:name => post_params[:title])
     when "game"
-      @post.game = Game.new(:name => post_params[:title])
+      @post.game = Game.create(:name => post_params[:title])
     when "show"
-      @post.show = Show.new(:name => post_params[:title])
+      @post.show = Show.create(:name => post_params[:title])
     end
 
     if @post.save

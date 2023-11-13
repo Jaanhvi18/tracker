@@ -3,7 +3,7 @@
     <div class="content-wrapper content">
 
     <div class="movie-info left-division">
-      <p class="movie-title"><%= @post.movie.description %></p>
+      <p class="movie-title"><%= @post.movie.name %></p>
       <a href="#"><img src="https://www.peacocktv.com/dam/growth/assets/Campaign/FiveNightsAtFreddys/fnaf-vertical-key-art.jpg" alt="Movie Image" class= "entertainment-image"></a>
       <div class="rating">
           <p class="stars"><%= @post.movie.director %></p>
@@ -20,7 +20,7 @@
     <img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="User Image" class="circular-image">
     <div class="user-details">
       <p class="username"><%= @post.user.email %></p>
-      <%= link_to "View this Profile", user_path(@post.user), class: "button" %>
+      <%= link_to "View this Profile", profile_path , class: "button" %>
     </div>
   </div>
 </div>
