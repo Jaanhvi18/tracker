@@ -3,6 +3,7 @@ body {
     height: 100vh; /* Make the body take the full viewport height */
     display: flex;
     flex-direction: column; /* Stack child elements vertically */
+    padding: 1%;
 }
 /* Styling for the top bar */
 .top-bar {
@@ -42,7 +43,7 @@ body {
     width: 150px; /* Set the width and height to create a circle */
     height: 150px;
     border-radius: 50%; /* Makes the image circular */
-    max-width: 100%; /* Ensures the image fits within the container */
+    max-width: 50%; /* Ensures the image fits within the container */
     height: auto; /* Maintains aspect ratio */
     box-shadow: 0 0 0 5px #000; /* Adds a black outline with a 5px width */
     margin: 2%;
@@ -73,5 +74,3 @@ body {
         flex-direction: column;
     }
 }
-
-

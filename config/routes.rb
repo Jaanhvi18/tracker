@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  resources :entertainments
   get 'profiles/show'
   devise_for :users, controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
   
@@ -21,9 +20,15 @@ Rails.application.routes.draw do
   root 'dashboards#index'
 
   resource :profile, only: [:show]
-  resources :reviews, :posts
+  resources :posts do
+    resources :user, only: [:show], as: :user
+  end
+  resources :users, only: [:show]
 
-
+  resources :profiles do
+    resources :posts, only: [:new, :create]
+  end
+  resources :posts
 
 end
 
