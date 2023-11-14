@@ -1,55 +1,39 @@
-/* Styling for the top bar */
-.top-bar {
-    background-color: #3498DB;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-size: 24px;
-}
+
 
 /* Styling for the container wrapping authentication section */
 .github-container {
-    background-color: #f4f7f6; // Using the global background color for consistency
-    padding: 20px;
+    padding: 10px;
     border-radius: 5px;
     margin-bottom: 2rem;
+    display: flex;
+    gap: 10px;
+}
+.col-md-4 {
+    margin-top: 10px; /* Add some top margin for spacing */
 }
 
-/* Styling for the authentication section */
-.alert {
-    background-color: #F2F2F2;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 10px;
-    margin: 10px 0;
-}
-
-/* Styling for the buttons in the authentication section */
-.btn {
-    padding: 10px 20px;
-    background-color: #3498DB;
+/* Style the buttons within the columns */
+.top-bar-btn {
+    padding: 10px 15px; /* Adjust padding as needed */
     color: #fff;
     text-decoration: none;
-    border: 1px solid #3498DB;
     border-radius: 5px;
     font-weight: bold;
+    font-size: small;
     transition: background-color 0.3s, color 0.3s;
-    margin: 5px;
+    white-space: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+.guest-text{
+    justify-content: left;
 }
 
-.btn:hover {
+/* Style the buttons on hover */
+.top-bar-btn:hover {
     background-color: #258CD1;
-}
-
-/* Styling for the flash messages */
-.alert.alert-info {
-    background-color: #3498DB;
-    color: #fff;
-}
-
-.alert.alert-warning {
-    background-color: #FFA500;
-    color: #fff;
+    color: white;
 }
 
 /* Responsive Styles */

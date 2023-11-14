@@ -26,7 +26,6 @@ body {
     background-color: #f4f7f6;
     color: #333;
     line-height: 1.6;
-    padding-top: 20px;
     min-height: 100vh;
 }
 
@@ -64,6 +63,7 @@ input[type="button"] {
     border-radius: 5px;
     cursor: pointer;
     font-size: 1rem;
+    white-space: nowrap;
 }
 
 button:hover,
