@@ -78,6 +78,7 @@ Please update this branch with the progress being made by you (and your partner)
 - [x] Set up user authentication
 - [x] Deleted profile model and changed it for just a user model
 - [x] set up the sign up and sign in form
+- [x] Tests for user authentication
 
 #### Cris + Edna - Progress
   - [x] Created the movie model
