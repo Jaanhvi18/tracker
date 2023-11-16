@@ -37,24 +37,21 @@
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex; // Set the container to a flex container
-    justify-content: center; // Horizontally center the content
+    justify-content: space-around; // Horizontally center the content
     align-items: center; // Vertically center the content
     flex-direction: column;
-    height: 100%;
-    min-height: 300px;
 }
 .circular-image{
     width: 150px; /* or any size you want */
     height: 150px; /* should be the same as width to create a perfect circle */
     border-radius: 50%; /* this makes the image round */
     object-fit: cover; /* this will ensure the image covers the area without being stretched */
-    margin: 0;
     overflow: hidden; /* ensures that nothing spills outside the border-radius */
     border: 3px solid #ecf0f1; /* optional: adds a border around the image */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* optional: adds a subtle shadow to lift the image off the page */
-    margin: 0 auto; /* centers the image within its container */
+    margin: 0; /* centers the image within its container */
     display: block; /* ensures the image is block-level for margin to work */
 }
-.gallery > *, .profile > * {
+.gallery > :not(:first-child), .profile > :not(:first-child) {
     margin-top: 20px;
 }

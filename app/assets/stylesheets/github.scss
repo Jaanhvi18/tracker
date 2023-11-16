@@ -4,9 +4,12 @@
 .github-container {
     padding: 10px;
     border-radius: 5px;
-    margin-bottom: 2rem;
+    margin: 2rem;
     display: flex;
     gap: 10px;
+}
+.github-container p {
+    font-size: medium;
 }
 .col-md-4 {
     margin-top: 10px; /* Add some top margin for spacing */

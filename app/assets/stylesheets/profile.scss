@@ -24,15 +24,6 @@ main {
   align-items: center;
 }
 
-.post-container {
-  width: 80%; /* Adjust the width as needed */
-  max-width: 300px; /* Set a maximum width for the post container */
-  padding: 10px;
-  border: 1px solid #ccc;
-  margin: 0 0 20px; /* Added some margin at the bottom for spacing */
-  overflow: hidden;
-}
-
 .post-image {
   max-width: 100%;
   height: auto;

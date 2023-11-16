@@ -1,31 +1,34 @@
+<header class="top-bar">
+  <h1>Tracker</h1>
+  <%= render 'github_partial' %>
+</header>
 <div class="post-container">
   <div class="speech-bubble">
-    <div class="content-wrapper content">
+    <div class="content-wrapper">
 
-    <% if @post.movie.present? %>
-        <%= render partial: 'movie_partial', locals: { post: @post } %>
-      <% elsif @post.game.present? %>
-        <%= render partial: 'game_partial', locals: { post: @post } %>
-      <% elsif @post.show.present? %>
-        <%= render partial: 'show_partial', locals: { post: @post } %>
-      <% else %>
-        <!-- Handle the case when none of the keys are present -->
+      <% if @post.movie.present? %>
+          <%= render partial: 'movie_partial', locals: { post: @post } %>
+        <% elsif @post.game.present? %>
+          <%= render partial: 'game_partial', locals: { post: @post } %>
+        <% elsif @post.show.present? %>
+          <%= render partial: 'show_partial', locals: { post: @post } %>
+        <% else %>
+          <!-- Handle the case when none of the keys are present -->
       <% end %>
-      
-    <div class="text-box right-division">
-      <p><%= @post.description %></p>
+      <div class="text-box right-division">
+        <p><%= @post.description %></p>
+      </div>
     </div>
-    </div>
+  </div>
+  <div class="user-info-bar">
+<div class="user-info">
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="User Image" class="user-avatar"%>
+  <div class="user-details">
+    <p class="user-name"><%= @post.user.email %></p>
+    <%= link_to "View this Profile", profile_path , class: "button" %>
   </div>
 </div>
-<div class="user-info-bar">
-  <div class="user-info">
-    <img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="User Image" class="circular-image">
-    <div class="user-details">
-      <p class="username"><%= @post.user.email %></p>
-      <%= link_to "View this Profile", profile_path , class: "button" %>
-    </div>
-  </div>
+</div>
 </div>
 <div class="bottom-bar">
   <a href="<%= root_path %>">Gallery</a>
