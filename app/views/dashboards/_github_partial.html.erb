@@ -1,11 +1,11 @@
 <section id="auth" class="github-container">
 <% if user_signed_in? %>
-        <div class="row alert alert-dark">
+        <div class="row">
           <div class="guest-text">
             <p> Hello, <%= current_user.email %></p>
           </div>
           <div class="col-md-2">
-            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "btn btn-warning" %>
+            <%= button_to "Sign out", destroy_user_session_path, method: :delete, class: "button top-bar-btn" %>
           </div>
         </div>
       <% else %>
