@@ -1,0 +1,19 @@
+/* Styling for the flash messages */
+.alert.alert-info {
+    background-color: #3498DB;
+    color: #fff;
+}
+
+.alert.alert-warning {
+    background-color: #FFA500;
+    color: #fff;
+}
+
+/* Styling for the authentication section */
+.alert {
+    background-color: #F2F2F2;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px 0;
+}
