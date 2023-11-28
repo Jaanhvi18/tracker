@@ -13,13 +13,7 @@ class PostsController < ApplicationController
     @post.user = current_user
     @post.stars = post_params[:stars]
     @post.description = post_params[:description]
-    # if post_params[:media_type] == "movie"
-    #   @post.movie = Movie.new(post_params[:title])
-    # elsif post_params[:media_type] == "game"
-    #   @post.game = Game.new(post_params[:title])
-    # else 
-    #   @post.show = Show.new(post_params[:title])
-    # end
+
     case post_params[:media_type]
     when "movie"
       @post.movie = Movie.create(:name => post_params[:title])
@@ -39,7 +33,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    # Define your strong parameters for the post
+    #parameters for the post
     params.require(:post).permit(:title, :stars, :description, :media_type)
   end
 end

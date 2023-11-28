@@ -1,8 +1,6 @@
 class DashboardsController < ApplicationController
   def index
-    # @dashboards = Dashboard.all # change to specific profile after user auth
+    #doesn't update anything jut need defined method for RESTful routes
   end
 
-  def show
-  end
 end
