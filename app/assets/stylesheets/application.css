@@ -14,6 +14,7 @@
  *= require_self
  */
 
+
  * {
     margin: 0;
     padding: 0;
@@ -82,6 +83,7 @@ select {
     margin-bottom: 1rem;
     border-radius: 5px;
     border: 1px solid #ccc;
+
 }
 
 /* Modernizing the Top Bar */
@@ -92,6 +94,7 @@ select {
     text-align: center;
 }
 
+
 /* Adding modern shadow to card-like elements */
 .card {
     background-color: #ffffff;
@@ -100,3 +103,4 @@ select {
     padding: 20px;
     margin-bottom: 1rem;
 }
+

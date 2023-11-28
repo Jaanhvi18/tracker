@@ -1,3 +1,4 @@
+
 class ProfilesController < ApplicationController
     before_action :authenticate_user!
 
@@ -7,3 +8,4 @@ class ProfilesController < ApplicationController
         @posts = @user.posts
     end
 end
+
