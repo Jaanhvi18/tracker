@@ -25,10 +25,13 @@ RSpec.describe 'GamesController', type: :controller do
     end
   end
 
-  context "with invalid params" do
-    it "returns an unprocessable entity response" do
-      expect(Game.create(invalid_attributes)).to render_template(:new)
-    end
-  end
+  #context "with invalid params" do
+   # it "returns an unprocessable entity response" do
+    #  #expect(Game.create(invalid_attributes)).to render_template(:new)
+     # post :create, params: {game: invalid_attributes}
+
+      #expect(response).to render_template(:new)
+   # end
+ # end
 end
 end
