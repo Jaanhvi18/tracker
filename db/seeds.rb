@@ -7,6 +7,7 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
 a = User.find_or_create_by!(email: 'alexadmin@example.com') do |user|
     user.password = 'admin123'
     user.password_confirmation = 'admin123'
@@ -22,7 +23,7 @@ c = User.find_or_create_by!(email: 'caseyadmin@example.com') do |user|
     user.password_confirmation = 'admin123'
   end
 
-  movie_name = "FNAF"
+movie_name = "FNAF"
 movie = Movie.find_or_create_by!(name: movie_name) do |m|
   m.release_date = Date.today # Placeholder date
   m.description = "Sample description"
@@ -31,17 +32,119 @@ movie = Movie.find_or_create_by!(name: movie_name) do |m|
   m.director = "Sample Director"
 end
 
-if movie.persisted?
-  puts "Movie created or found: #{movie.name}"
-else
-  puts "Failed to create or find movie with name: #{movie_name}"
+show_name = "Attack on Titan"
+show = Show.find_or_create_by!(name: show_name) do |s|
+  s.release_date = Date.today 
+  s.description = "Sample description"
+  s.episodes = 20
+  s.seasons = 5
+  s.director = "Mappa"
 end
-  
+
+game_name = "Stray"
+game = Game.find_or_create_by!(name: game_name) do |g|
+  g.release_date = Date.today
+  g.description = "Terrible game"
+  g.platform = "PS4"
+  g.price = 60.00
+end
+
   # Create a post
-  post = Post.new(
-    user: a,
-    stars: 3,
-    description: 'lowkey kinda mid',
-    movie: movie
-  )
+  post = Post.new(user: a, stars: 3, description: 'lowkey kinda mid', movie: movie)
   post.save!
+
+  post = Post.new(user: a, stars: 5, description: 'Amazing show', show: show)
+  post.save!
+
+  post = Post.new(user: a, stars: 5, description: 'Amazing show', game: game)
+  post.save!
+
+  # Movies
+movie_name_b = "Space Odyssey"
+movie_b = Movie.find_or_create_by!(name: movie_name_b) do |m|
+  m.release_date = Date.today
+  m.description = "A journey through space"
+  m.duration = 140
+  m.language = "English"
+  m.director = "Fictional Director"
+end
+
+# Shows
+show_name_b = "The Last Explorer"
+show_b = Show.find_or_create_by!(name: show_name_b) do |s|
+  s.release_date = Date.today
+  s.description = "Exploration and adventure"
+  s.episodes = 24
+  s.seasons = 3
+  s.director = "Imaginary Studio"
+end
+
+# Games
+game_name_b = "Lost in Time"
+game_b = Game.find_or_create_by!(name: game_name_b) do |g|
+  g.release_date = Date.today
+  g.description = "Time-travel adventure"
+  g.platform = "PC"
+  g.price = 50.00
+end
+
+# Posts for User b
+post_movie_b = Post.new(user: b, stars: 4, description: 'Intriguing and deep', movie: movie_b)
+post_movie_b.save!
+
+post_show_b = Post.new(user: b, stars: 5, description: 'Thrilling narrative', show: show_b)
+post_show_b.save!
+
+post_game_b = Post.new(user: b, stars: 2, description: 'Could be better', game: game_b)
+post_game_b.save!
+
+# Movies
+movie_name_c = "Mystery Island"
+movie_c = Movie.find_or_create_by!(name: movie_name_c) do |m|
+  m.release_date = Date.today
+  m.description = "Island adventure mystery"
+  m.duration = 130
+  m.language = "French"
+  m.director = "Creative Director"
+end
+
+# Shows
+show_name_c = "Cyber Revolution"
+show_c = Show.find_or_create_by!(name: show_name_c) do |s|
+  s.release_date = Date.today
+  s.description = "Futuristic tech drama"
+  s.episodes = 30
+  s.seasons = 4
+  s.director = "Futuristic Productions"
+end
+
+# Games
+game_name_c = "Galactic Wars"
+game_c = Game.find_or_create_by!(name: game_name_c) do |g|
+  g.release_date = Date.today
+  g.description = "Space battle and strategy"
+  g.platform = "Xbox"
+  g.price = 70.00
+end
+
+# Posts for User c
+post_movie_c = Post.new(user: c, stars: 5, description: 'Absolutely stunning', movie: movie_c)
+post_movie_c.save!
+
+post_show_c = Post.new(user: c, stars: 3, description: 'Good but lacks depth', show: show_c)
+post_show_c.save!
+
+post_game_c = Post.new(user: c, stars: 4, description: 'Engaging gameplay', game: game_c)
+post_game_c.save!
+
+
+#This is to double check each model was actually made or is in the db
+# arr = [a, b, c, movie, show, game, movie_b, show_b, game_b, movie_c, show_c, game_c, post, post_movie_b, post_show_b, post_game_b, post_movie_c, post_show_c, post_game_c]
+
+# arr.each do |model|
+#   if model.persisted?
+#     puts "Model #{model.class.name} with name #{model.try(:name) || model.try(:email)} created or found"
+#   else
+#     puts "Failed to create or find model #{model.class.name} with name #{model.try(:name) || model.try(:email)}"
+#   end
+# end
