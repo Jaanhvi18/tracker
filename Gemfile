@@ -92,8 +92,8 @@ gem 'omniauth-rails_csrf_protection'
 
 gem 'factory_bot_rails'
 
-group :test do
-  gem 'cucumber-rails', require: false
-  gem 'simplecov', require: false
-end
+# group :test do
+#   gem 'cucumber-rails', require: false
+#   gem 'simplecov', require: false
+# end
 

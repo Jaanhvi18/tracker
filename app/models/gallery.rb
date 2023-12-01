@@ -1,20 +1,34 @@
 class Gallery < ApplicationRecord
-    # Associations
-    has_many :posts
-    # , dependent: :destroy # Ensures posts are deleted when the gallery is.
-  
-    # Validations
-    validates :name, presence: true
+  # Assuming each gallery has many posts
+  has_many :posts
+  # Ensure the gallery has a minimum number of posts
+  validate :minimum_post_count
 
-    
-  
-    # Scopes
-    # Assuming you want to retrieve posts by their description, you would define a scope like this.
-    # Note that scopes on the Gallery model related to posts attributes are unusual. 
-    # Normally such scopes would be defined in the Post model itself.
-    # However, if you need to use it through gallery for some reason, it would look something like this:
-    # def self.description_is(description)
-    #   posts.where(description: description)
-    # end
+  validate :diverse_post_categories
+# validation method
+  def minimum_post_count
+    minimum_required = 5 # placeholder minimum
+    if posts.size < minimum_required
+      errors.add(:posts, "must have at least #{minimum_required} posts")
+    end
   end
-  
+
+  # If you want to ensure that the gallery contains posts from different categories
+
+
+  def diverse_post_categories
+    categories = posts.map { |post| post_category(post) }.uniq
+    if categories.size < 2 # Example: require at least two different types of posts
+      errors.add(:posts, "must include at least two different types of categories (movie, game, show)")
+    end
+  end
+
+  private
+
+  def post_category(post)
+    return 'movie' if post.movie.present?
+    return 'game' if post.game.present?
+    return 'show' if post.show.present?
+  end
+end
+

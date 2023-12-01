@@ -28,6 +28,12 @@ Rails.application.routes.draw do
   resources :profiles do
     resources :posts, only: [:new, :create]
   end
+
+    resources :galleries, only: [:index, :show]
+    # This creates paths for the gallery index and individual post details
+ 
+  
+
   resources :posts
 
 end
