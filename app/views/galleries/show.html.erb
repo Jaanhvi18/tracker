@@ -1,0 +1,33 @@
+
+
+<header>
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="Profile Photo" class="circular-image">
+  <% name = @user.email.match(/^(.*)@/) %>
+  <p>Hi, <%= name[1] %>!</p>
+</header>
+
+<main>
+<div class="post-details">
+  <%= link_to 'Back to Gallery', galleries_path %>
+
+  <% if @posts.movie.present? %>
+    <%= render partial: 'movie_partial', locals: { post: @post } %>
+  <% elsif @post.game.present? %>
+    <%= render partial: 'game_partial', locals: { post: @post } %>
+  <% elsif @post.show.present? %>
+    <%= render partial: 'show_partial', locals: { post: @post } %>
+  <% else %>
+    <p>This post does not have additional details.</p>
+  <% end %>
+
+  <div class="post-description">
+    <p><%= @post.description %></p>
+  </div>
+</div>
+</main>
+
+<div class="bottom-bar1">
+  <a href="<%= galleries_path %>">Gallery</a>
+  <a href="<%= root_path %>">Dashboards</a>
+  <a href="<%= profile_path %>">Profile</a>
+</div>
