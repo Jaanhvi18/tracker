@@ -1,5 +1,8 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show]
+  before_action :set_post, only: [:show, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def new
     @post = Post.new
@@ -7,7 +10,7 @@ class PostsController < ApplicationController
 
   def create
     @post = current_user.posts.build(post_params)
-    
+
     case params[:media_type]
     when 'movie'
       @post.build_movie(name: post_params[:title])
@@ -16,13 +19,24 @@ class PostsController < ApplicationController
     when 'show'
       @post.build_show(name: post_params[:title])
     end
-  
+
     if @post.save
       redirect_to profile_path, notice: 'Post was successfully created.'
     else
       render :new
     end
   end
+
+
+   # DELETE /posts/1 or /posts/1.json
+   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+      redirect_to profile_path(@post), notice: "Post was successfully destroyed." 
+      head :no_content 
+    end
+ 
+
   
 
   private
@@ -31,9 +45,13 @@ class PostsController < ApplicationController
     @post = Post.find(params[:id])
   end
 
-
   def post_params
     params.require(:post).permit(:name, :stars, :description)
   end
-  
+
+
+
+def record_not_found
+  redirect_to products_path, alert: 'No such toy'
+end
 end

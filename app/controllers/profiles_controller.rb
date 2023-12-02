@@ -1,6 +1,4 @@
-
-
-
+# frozen_string_literal: true
 
 # app/controllers/profiles_controller.rb
 class ProfilesController < ApplicationController
@@ -8,8 +6,6 @@ class ProfilesController < ApplicationController
 
   def show
     @user = current_user
-
     @posts = @user.posts
   end
 end
-

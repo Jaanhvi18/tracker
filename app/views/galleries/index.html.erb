@@ -7,17 +7,19 @@
 
       <% if post.movie.present? %>
         <div class="post-content">
-          <%= render partial: 'movie_partial', locals: { movie: post.movie, stars: post.stars } %>
+          <%= render partial: 'shared/game_partial', locals: { game: post.game, stars: post.stars } %>
+
         </div>
 
       <% elsif post.game.present? %>
         <div class="post-content">
-          <%= render partial: 'game_partial', locals: { game: post.game, stars: post.stars } %>
+          <%= render partial: 'shared/game_partial', locals: { game: post.game } %>
+
         </div>
 
       <% elsif post.show.present? %>
         <div class="post-content">
-          <%= render partial: 'show_partial', locals: { show: post.show, stars: post.stars } %>
+          <%= render partial: 'shared/show_partial', locals: { show: post.show, stars: post.stars } %>
         </div>
 
       <% else %>

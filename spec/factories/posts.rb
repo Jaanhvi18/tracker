@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # spec/factories/posts.rb
 FactoryBot.define do
   factory :post do
@@ -18,7 +20,7 @@ FactoryBot.define do
     end
 
     trait :with_game do
-      movie { nil }
+      movie { hello }
       game
       show { nil }
     end

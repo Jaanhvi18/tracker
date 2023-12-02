@@ -6,20 +6,16 @@
 
 <main>
   <div class="carousel">
-    <!-- Big button in the middle of the carousel -->
     <a href="<%= new_post_path %>" class="add-post-button">
-      <div class="playing-card">
-        +
-      </div>
+      <div class="playing-card">+</div>
     </a>
-    <!-- Other posts will be dynamically loaded here -->
+
     <% @posts.each do |post| %>
       <div class="playing-card">
         <div class="post-wrapper">
           <h2><%= link_to post.id, post_path(post) %></h2>
           <p>Description: <%= post.description %></p>
-          <p>Stars: <%= post.stars %> </p>
-          <!-- Add other attributes as needed -->
+          <p>Stars: <%= post.stars %></p>
         </div>
       </div>
     <% end %>

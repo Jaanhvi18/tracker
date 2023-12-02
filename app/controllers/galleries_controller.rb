@@ -1,6 +1,8 @@
+# frozen_string_literal: true
+
 class GalleriesController < ApplicationController
   before_action :authenticate_user!
-  
+
   def index
     @user = current_user
 
@@ -15,10 +17,6 @@ class GalleriesController < ApplicationController
 
     @posts = @user.posts
 
-      @post = Post.all
-    end
-    
-
-
-  
+    @post = Post.all
+  end
 end
