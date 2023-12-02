@@ -15,20 +15,28 @@
   }
   
   /* Typography */
-  .post-title {
-    font-size: 24px; /* Larger font size for post titles */
-    margin-bottom: 8px; /* Space between title and content */
-  }
+  // .post-title {
+  //   font-size: 24px; /* Larger font size for post titles */
+  //   margin-bottom: 8px; /* Space between title and content */
+  // }
 
 
   
-  .post-content {
-    font-size: 16px; /* Standard font size for content */
-    color: #333;
+  // .post-content {
+  //   font-size: 16px; /* Standard font size for content */
+  //   color: #333;
+  // }
+  .post-content{
+    flex: 1;
+    padding: 20px;
+    max-height: 100%;
+    overflow: auto;
+    font-size: .5em;
+    text-align: left;
   }
   
   .post-details {
-    font-size: 14px; /* Smaller font size for additional details */
+    font-size: .5em; /* Smaller font size for additional details */
     color: #666;
     margin-top: 12px; /* Space between content and additional details */
   }

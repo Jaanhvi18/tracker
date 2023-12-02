@@ -1,28 +1,26 @@
-<div class="gallery">
+<div class="gallery carousel">
   <% @posts.each do |post| %>
-    <div class="post">
-      <div class="post-title">
-        <%= link_to post.description, post_path(post) %>
-      </div>
-
+    <div class="playing-card">
       <% if post.movie.present? %>
         <div class="post-content">
-          <%= render partial: 'movie_partial', locals: { movie: post.movie, stars: post.stars } %>
+          <%= render partial: 'movie_partial', locals: { movie: post.movie, stars: post.stars, post: post } %>
         </div>
 
       <% elsif post.game.present? %>
         <div class="post-content">
-          <%= render partial: 'game_partial', locals: { game: post.game, stars: post.stars } %>
+          <%= render partial: 'game_partial', locals: { game: post.game, stars: post.stars, post: post } %>
         </div>
 
       <% elsif post.show.present? %>
         <div class="post-content">
-          <%= render partial: 'show_partial', locals: { show: post.show, stars: post.stars } %>
+          <%= render partial: 'show_partial', locals: { show: post.show, stars: post.stars, post: post } %>
         </div>
 
       <% else %>
-        <div class="no-details">
-          <p>No additional details available for this post.</p>
+        <div class="post-content">
+          <div class="post-details">
+            <p>No additional details available for this post.</p>
+          </div>
         </div>
       <% end %>
     </div>

@@ -1,8 +1,8 @@
-
-
-    <div class="movie-info left-division-movie">
+<div class="movie-info left-division-movie">
   <% if game.present? %>
-    <p class="game-title"><%= game.name %></p>
+    <p><%= link_to game.name, post_path(post) %></p>
+    <p>Description: <%= post.description %></p>
+    <p>Stars: <%= post.stars %> </p>
   <% else %>
     <p>Game information not available.</p>
   <% end %>

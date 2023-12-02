@@ -35,5 +35,17 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:name, :stars, :description)
   end
+
+  def get_media_name
+    post-title = "Post Name Unknown"
+    if post.game.present?
+      post-title = post.game.name
+    elsif post.movie.present?
+      post-title = post.movie.name
+    elsif post.show.present?
+      post-title = post.show.name
+    post-title
+  end
+
   
 end

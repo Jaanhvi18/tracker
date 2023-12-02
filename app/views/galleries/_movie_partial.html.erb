@@ -1,11 +1,15 @@
 
 
-    <div class="movie-info left-division-movie">
+<div class="movie-info left-division-movie">
   <% if movie.present? %>
-    <p class="movie-title"><%= movie.name %></p>
+    <p><%= link_to movie.name, post_path(post) %></p>
+    <p>Description: <%= post.description %></p>
+    <p>Stars: <%= post.stars %> </p>
   <% else %>
     <p>Movie information not available.</p>
   <% end %>
   
   <!-- Rest of your code -->
 </div>
+
+
