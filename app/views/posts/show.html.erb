@@ -1,14 +1,22 @@
+<%= render 'commons/top_bar_partial' %>
 <div class="container">
   <div class="speech-bubble">
     <div class="content-wrapper content">
 
     <% if @post.movie.present? %>
-        <%= render partial: 'shared/movie_partial', locals: { post: @post } %>
+        <%= render partial: 'commons/movie_partial', locals: { post: @post } %>
       <% elsif @post.game.present? %>
+<<<<<<< HEAD
         <%= render partial: 'shared/game_partial', locals: { post: @post } %>
       <% elsif @post.show.present? %>
         <%= render partial: 'shared/show_partial', locals: { post: @post } %>
       <% else %>
+=======
+        <%= render partial: 'commons/game_partial', locals: { post: @post } %>
+
+      <% elsif @post.show.present? %>
+        <%= render partial: 'commons/show_partial', locals: { post: @post } %>
+>>>>>>> 604b481b931c89880fd803779058dcee5cad9d06
       <% end %>
       
     <div class="text-box right-division">
@@ -22,12 +30,7 @@
     <img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="User Image" class="circular-image">
     <div class="user-details">
       <p class="username"><%= @post.user.email %></p>
-      <%= link_to "View this Profile", profile_path , class: "button" %>
     </div>
   </div>
 </div>
-<div class="bottom-bar">
-  <a href="<%= galleries_path %>">Gallery</a>
-  <a href="<%= root_path %>">Dashboards</a>
-  <a href="<%= profile_path %>">Profile</a>
-</div>
+<%= render partial: 'commons/bottom_bar_partial' %>

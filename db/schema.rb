@@ -83,6 +83,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_12_01_041640) do
   end
 
   create_table "posts", force: :cascade do |t|
+    t.text "media_title"
     t.datetime "published"
     t.string "timestamps"
     t.text "description"

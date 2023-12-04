@@ -13,11 +13,11 @@ class PostsController < ApplicationController
 
     case params[:media_type]
     when 'movie'
-      @post.build_movie(name: post_params[:title])
+      @post.build_movie(name: post_params[:title], stars: post_params[:stars])
     when 'game'
-      @post.build_game(name: post_params[:title])
+      @post.build_game(name: post_params[:title], stars: post_params[:stars])
     when 'show'
-      @post.build_show(name: post_params[:title])
+      @post.build_show(name: post_params[:title], stars: post_params[:stars])
     end
 
     if @post.save
@@ -58,7 +58,7 @@ class PostsController < ApplicationController
   #   params.require(:name).permit(:release_date, :description, :platform, :ESRB_rating, :price)
   # end
   def post_params
-    params.require(:post).permit(:media_name, :stars, :description)
+    params.require(:post).permit(:media_title, :stars, :description)
   end
 
   
