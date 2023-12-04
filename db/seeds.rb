@@ -51,13 +51,13 @@ game = Game.find_or_create_by!(name: game_name) do |g|
 end
 
   # Create a post
-  post = Post.new(user: a, stars: 3, description: 'lowkey kinda mid', movie: movie)
+  post = Post.new(user: a, stars: 3, description: 'lowkey kinda mid', movie: movie, media_title:movie_name)
   post.save!
 
-  post = Post.new(user: a, stars: 5, description: 'Amazing show', show: show)
+  post = Post.new(user: a, stars: 5, description: 'Amazing show', show: show, media_title:show_name)
   post.save!
 
-  post = Post.new(user: a, stars: 5, description: 'Amazing show', game: game)
+  post = Post.new(user: a, stars: 5, description: 'Amazing show', game: game, media_title:game_name)
   post.save!
 
   # Movies
@@ -90,13 +90,13 @@ game_b = Game.find_or_create_by!(name: game_name_b) do |g|
 end
 
 # Posts for User b
-post_movie_b = Post.new(user: b, stars: 4, description: 'Intriguing and deep', movie: movie_b)
+post_movie_b = Post.new(user: b, stars: 4, description: 'Intriguing and deep', movie: movie_b, media_title:movie_name_b)
 post_movie_b.save!
 
-post_show_b = Post.new(user: b, stars: 5, description: 'Thrilling narrative', show: show_b)
+post_show_b = Post.new(user: b, stars: 5, description: 'Thrilling narrative', show: show_b, media_title: show_name_b)
 post_show_b.save!
 
-post_game_b = Post.new(user: b, stars: 2, description: 'Could be better', game: game_b)
+post_game_b = Post.new(user: b, stars: 2, description: 'Could be better', game: game_b, media_title: game_name_b)
 post_game_b.save!
 
 # Movies
@@ -129,13 +129,13 @@ game_c = Game.find_or_create_by!(name: game_name_c) do |g|
 end
 
 # Posts for User c
-post_movie_c = Post.new(user: c, stars: 5, description: 'Absolutely stunning', movie: movie_c)
+post_movie_c = Post.new(user: c, stars: 5, description: 'Absolutely stunning', movie: movie_c, media_title:movie_name_c)
 post_movie_c.save!
 
-post_show_c = Post.new(user: c, stars: 3, description: 'Good but lacks depth', show: show_c)
+post_show_c = Post.new(user: c, stars: 3, description: 'Good but lacks depth', show: show_c, media_title:show_name_c)
 post_show_c.save!
 
-post_game_c = Post.new(user: c, stars: 4, description: 'Engaging gameplay', game: game_c)
+post_game_c = Post.new(user: c, stars: 4, description: 'Engaging gameplay', game: game_c, media_title:game_name_c)
 post_game_c.save!
 
 

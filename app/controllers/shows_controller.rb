@@ -13,6 +13,6 @@ class ShowsController < ApplicationController
   end
 
   def game_params
-    params.require(:name).permit(:release_date, :description, :episodes, :seasons, :director, :on_going)
+    params.require(:name).permit(:release_date, :description, :episodes, :seasons, :director, :on_going, :stars)
   end
 end

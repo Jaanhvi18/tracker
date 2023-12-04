@@ -13,6 +13,6 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:name).permit(:release_date, :description, :platform, :ESRB_rating, :price)
+    params.require(:name).permit(:release_date, :description, :platform, :ESRB_rating, :price, :stars)
   end
 end

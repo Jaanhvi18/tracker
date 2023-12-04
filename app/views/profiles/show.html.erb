@@ -1,9 +1,4 @@
-<header>
-  <img src="https://static.vecteezy.com/system/resources/thumbnails/020/765/399/small/default-profile-account-unknown-icon-black-silhouette-free-vector.jpg" alt="Profile Photo" class="circular-image">
-  <% name = @user.email.match(/^(.*)@/) %>
-  <p>Hi, <%= name[1] %>!</p>
-</header>
-
+<%= render 'commons/top_bar_partial' %>
 <main>
   <div class="carousel">
     <a href="<%= new_post_path %>" class="add-post-button">
@@ -13,15 +8,7 @@
     <% @posts.each do |post| %>
       <div class="playing-card">
       <div class="post-wrapper">
-        <% if post.game%>
-      <h2 class='whitelink'><%= link_to post.game.name, post_path(post),class: 'whitelink' %></h2>
-      <% elsif post.movie%>
-       <h2 class='whitelink'><%= link_to post.movie.name, post_path(post),class: 'whitelink' %></h2>
-      <% elsif post.show%>
-      <h2 class='whitelink'><%= link_to post.show.name, post_path(post), class: 'whitelink' %></h2>
-       <% else %>
-     <h2 class='whitelink'><%= link_to post.id, post_path(post) %></h2>
-      <%end %>
+     <h2 class='whitelink'><%= link_to post.media_title, post_path(post) %></h2>
         <p>Description: <%= post.description %></p>
         <p>Stars: <%= post.stars %> </p>
         <!-- Add other attributes as needed -->
@@ -31,9 +18,5 @@
     <% end %>
   </div>
 </main>
+<%= render partial: 'commons/bottom_bar_partial' %>
 
-<div class="bottom-bar">
-  <a href="<%= galleries_path %>">Gallery</a>
-  <a href="<%= root_path %>">Dashboards</a>
-  <a href="<%= profile_path %>">Profile</a>
-</div>

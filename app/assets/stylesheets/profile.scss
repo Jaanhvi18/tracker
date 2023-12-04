@@ -87,6 +87,12 @@ main {
   color: white;
   text-decoration: none;
 }
-.whitelink{
-  color: white;
+.whitelink a{
+  color: #ffffff; /* Set the color to white */
+  text-decoration: none; /* Optional: Removes underline from links */
+}
+
+.whitelink a:hover {
+  color: #6c198d; /* Lighter color for hover effect */
+  text-decoration: underline; /* Optional: Underline on hover */
 }

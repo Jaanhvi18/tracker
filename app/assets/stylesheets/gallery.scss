@@ -1,62 +1,39 @@
-
-
-
-/* Layout and spacing */
-.gallery {
-    max-width: 800px; /* Adjust the width as needed */
-    margin: auto;
-    padding: 20px;
-  }
-  
-  .post {
-    border-bottom: 1px solid #ccc;
-    padding: 16px;
-    margin-bottom: 20px;
-  }
-  
-  /* Typography */
-  .post-title {
-    font-size: 24px; /* Larger font size for post titles */
-    margin-bottom: 8px; /* Space between title and content */
-  }
-
-
-  
-  .post-content {
-    font-size: 16px; /* Standard font size for content */
-    color: #333;
-  }
-  
-  .post-details {
-    font-size: 14px; /* Smaller font size for additional details */
-    color: #666;
-    margin-top: 12px; /* Space between content and additional details */
-  }
-  
-  /* Link styles */
-  .post a {
-    color: #007bff;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  .post a:hover {
-    text-decoration: underline;
-  }
-  main {
-  padding: 20px;
-  width: 100%;
-  height: 60%; /* Adjusted to accommodate the new top and bottom bar heights */
-  overflow: hidden;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+/* Gallery container styles */
+.gallery-index{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns in larger screens */
+  grid-gap: 20px; /* Space between the cards */
+  padding: 20px; /* Padding around the gallery */
+  margin-top: 60px; /* To avoid overlapping with the fixed top bar */
 }
-  /* Misc */
-  .no-details {
-    color: #999; /* A lighter color for 'no details' text */
-  }
 
-  
-  
-  
+/* Individual post styles */
+.post {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 20px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  height: 300px; /* Fixed height */
+  overflow: hidden; /* Hide overflow */
+}
+
+/* Post title styles */
+.post-title {
+  color: #333;
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .gallery {
+      grid-template-columns: repeat(2, 1fr); /* 2 columns in medium screens */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .gallery {
+      grid-template-columns: 1fr; /* 1 column in small screens */
+  }
+}

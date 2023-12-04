@@ -93,15 +93,6 @@ select {
 
 }
 
-/* Modernizing the Top Bar */
-.top-bar {
-    background-color: #3498db;
-    color: #ffffff;
-    padding: 10px 0;
-    text-align: center;
-}
-
-
 /* Adding modern shadow to card-like elements */
 .card {
     background-color: #ffffff;
