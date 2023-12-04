@@ -1,8 +1,8 @@
 # frozen_string_literal: true
 
 class PostsController < ApplicationController
-  before_action :set_post, only: [:show, :destroy]
-  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
+  #before_action :set_post, only: [:show, :destroy]
+  #rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def new
     @post = Post.new
@@ -41,28 +41,31 @@ class PostsController < ApplicationController
 
   private
 
-  def set_post
-    @post = Post.find(params[:id])
-  end
+  # def set_post
+  #   @post = Post.find(params[:id])
+  # end
 
 
-  def show_params
-    params.require(:name).permit(:release_date, :description, :episodes, :seasons, :director, :on_going)
-  end
+  # def show_params
+  #   params.require(:name).permit(:release_date, :description, :episodes, :seasons, :director, :on_going)
+  # end
 
-    def movie_params
-    params.require(:name).permit(:description, :release_date, :duration, :language, :director)
-  end
+  #   def movie_params
+  #   params.require(:name).permit(:description, :release_date, :duration, :language, :director)
+  # end
 
-  def game_params
-    params.require(:name).permit(:release_date, :description, :platform, :ESRB_rating, :price)
+  # def game_params
+  #   params.require(:name).permit(:release_date, :description, :platform, :ESRB_rating, :price)
+  # end
+  def post_params
+    params.require(:post).permit(:media_name, :stars, :description)
   end
 
   
 
-def record_not_found
-  redirect_to products_path, alert: 'No such media'
-end
+# def record_not_found
+#   redirect_to products_path, alert: 'No such media'
+# end
 end
 
 
