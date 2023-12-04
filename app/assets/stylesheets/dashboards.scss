@@ -1,53 +1,71 @@
-body {
-    font-family: Arial, sans-serif;
-    height: 100vh; /* Make the body take the full viewport height */
-    display: flex;
-    flex-direction: column; /* Stack child elements vertically */
-    padding: 1%;
-}
-/* Styling for the top bar */
 .top-bar {
-    background-color: #3498DB;
-    color: #fff;
-    text-align: center;
-    padding: 10px;
-    font-size: 24px;
-}
-/* Styling for the main content container */
-.content {
-    flex: 1; /* Make the content container expand to fill available vertical space */
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 1rem;
+    font-size: 1.5rem;
     display: flex;
-}
-/* Styling for the left division */
-.left-division {
-    flex: 1;
-    background-color: #F2F2F2;
-    padding: 20px;
-    border-right: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-}
-/* Styling for the right division */
-.right-division {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; /* Center content vertically */
-    align-items: center; /* Center content horizontally */
-}
-
-.circular-image {
-    width: 150px; /* Set the width and height to create a circle */
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .circular-image {
+    width: 150px;
     height: 150px;
-    border-radius: 50%; /* Makes the image circular */
-    max-width: 50%; /* Ensures the image fits within the container */
-    height: auto; /* Maintains aspect ratio */
-    box-shadow: 0 0 0 5px #000; /* Adds a black outline with a 5px width */
-    margin: 2%;
-}
+    border-radius: 50%;
+    object-fit: cover;
+    overflow: hidden;
+    border: 3px solid #ecf0f1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 0;
+    display: block;
+  }
+  
+  .content {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    gap: 20px;
+    align-items: start;
+    height: calc(100vh - 3rem); /* Adjust for top-bar height */
+    overflow: auto;
+  }
+  
+  .carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    gap: 20px; /* Added gap for spacing */
+  }
+  
+  .add-post-button {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .playing-card {
+    background-color: #3498db;
+    color: #ecf0f1;
+    font-size: 2em;
+    width: 200px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .post-wrapper {
+    padding: 20px;
+    max-height: 100%;
+    overflow: hidden; /* Change this from auto to hidden to remove the scroll */
+    font-size: 1 rem; /* Adjust font size */
+    word-wrap: break-word; /* This ensures long words will wrap and not overflow */
+  }
 
 
 .button {
@@ -74,3 +92,26 @@ body {
         flex-direction: column;
     }
 }
+  .post-wrapper > * {
+    max-width: 100%; /* Ensures that all children fit within the parent's width */
+  }
+  
+  .bottom-bar {
+    background-color: #2c3e50;
+    color: #ecf0f1;
+    padding: 10px;
+    height: 80px;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+  }
+  
+  .bottom-bar a {
+    color: #ecf0f1;
+    text-decoration: none;
+  }
+  
