@@ -6,13 +6,10 @@
 
 <main>
   <div class="carousel">
-    <!-- Big button in the middle of the carousel -->
     <a href="<%= new_post_path %>" class="add-post-button">
-      <div class="playing-card">
-        +
-      </div>
+      <div class="playing-card">+</div>
     </a>
-    <!-- Other posts will be dynamically loaded here -->
+
     <% @posts.each do |post| %>
       <div class="playing-card">
       <div class="post-wrapper">
@@ -36,7 +33,7 @@
 </main>
 
 <div class="bottom-bar">
-  <a href="<%= root_path %>">Gallery</a>
+  <a href="<%= galleries_path %>">Gallery</a>
   <a href="<%= root_path %>">Dashboards</a>
   <a href="<%= profile_path %>">Profile</a>
 </div>

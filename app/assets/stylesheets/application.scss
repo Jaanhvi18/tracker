@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+// In application.scss
+@import "gallery";
+
+
 .btn-primary {
     background: none; /* Remove the background color */
     border: none; /* Remove the border */

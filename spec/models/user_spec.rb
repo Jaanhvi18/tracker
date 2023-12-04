@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
@@ -32,7 +34,8 @@ RSpec.describe User, type: :model do
     end
 
     it 'does not create a user with a duplicate email' do
-      existing_user = User.create(email: 'duplicate@example.com', password: 'password', password_confirmation: 'password')
+      User.create(email: 'duplicate@example.com', password: 'password',
+                  password_confirmation: 'password')
       new_user = User.new(email: 'duplicate@example.com', password: 'password', password_confirmation: 'password')
       expect(new_user).not_to be_valid
     end

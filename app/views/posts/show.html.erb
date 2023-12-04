@@ -3,11 +3,12 @@
     <div class="content-wrapper content">
 
     <% if @post.movie.present? %>
-        <%= render partial: 'movie_partial', locals: { post: @post } %>
+        <%= render partial: 'shared/movie_partial', locals: { post: @post } %>
       <% elsif @post.game.present? %>
-        <%= render partial: 'game_partial', locals: { post: @post } %>
+        <%= render partial: 'shared/game_partial', locals: { post: @post } %>
+
       <% elsif @post.show.present? %>
-        <%= render partial: 'show_partial', locals: { post: @post } %>
+        <%= render partial: 'shared/show_partial', locals: { post: @post } %>
       <% else %>
         <!-- Handle the case when none of the keys are present -->
       <% end %>
@@ -28,7 +29,7 @@
   </div>
 </div>
 <div class="bottom-bar">
-  <a href="<%= root_path %>">Gallery</a>
+  <a href="<%= galleries_path %>">Gallery</a>
   <a href="<%= root_path %>">Dashboards</a>
   <a href="<%= profile_path %>">Profile</a>
 </div>

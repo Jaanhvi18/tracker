@@ -1,0 +1,32 @@
+<div class="gallery">
+  <% @posts.each do |post| %>
+    <div class="post">
+      <div class="post-title">
+        <%= link_to post.description, post_path(post) %>
+      </div>
+
+      <% if post.movie.present? %>
+        <div class="post-content">
+          <%= render partial: 'shared/game_partial', locals: { game: post.game, stars: post.stars } %>
+
+        </div>
+
+      <% elsif post.game.present? %>
+        <div class="post-content">
+          <%= render partial: 'shared/game_partial', locals: { game: post.game } %>
+
+        </div>
+
+      <% elsif post.show.present? %>
+        <div class="post-content">
+          <%= render partial: 'shared/show_partial', locals: { show: post.show, stars: post.stars } %>
+        </div>
+
+      <% else %>
+        <div class="no-details">
+          <p>No additional details available for this post.</p>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>

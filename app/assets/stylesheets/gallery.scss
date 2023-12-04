@@ -1,0 +1,62 @@
+
+
+
+/* Layout and spacing */
+.gallery {
+    max-width: 800px; /* Adjust the width as needed */
+    margin: auto;
+    padding: 20px;
+  }
+  
+  .post {
+    border-bottom: 1px solid #ccc;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+  
+  /* Typography */
+  .post-title {
+    font-size: 24px; /* Larger font size for post titles */
+    margin-bottom: 8px; /* Space between title and content */
+  }
+
+
+  
+  .post-content {
+    font-size: 16px; /* Standard font size for content */
+    color: #333;
+  }
+  
+  .post-details {
+    font-size: 14px; /* Smaller font size for additional details */
+    color: #666;
+    margin-top: 12px; /* Space between content and additional details */
+  }
+  
+  /* Link styles */
+  .post a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .post a:hover {
+    text-decoration: underline;
+  }
+  main {
+  padding: 20px;
+  width: 100%;
+  height: 60%; /* Adjusted to accommodate the new top and bottom bar heights */
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+  /* Misc */
+  .no-details {
+    color: #999; /* A lighter color for 'no details' text */
+  }
+
+  
+  
+  

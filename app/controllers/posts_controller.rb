@@ -1,26 +1,23 @@
+# frozen_string_literal: true
+
 class PostsController < ApplicationController
-  def show
-    @post = Post.find(params[:id])
-    @user = @post.user
-  end
+  before_action :set_post, only: [:show, :destroy]
+  rescue_from ActiveRecord::RecordNotFound, with: :record_not_found
 
   def new
     @post = Post.new
   end
 
   def create
-    @post = Post.new()
-    @post.user = current_user
-    @post.stars = post_params[:stars]
-    @post.description = post_params[:description]
+    @post = current_user.posts.build(post_params)
 
-    case post_params[:media_type]
-    when "movie"
-      @post.movie = Movie.create(:name => post_params[:media_title])
-    when "game"
-      @post.game = Game.create(:name => post_params[:media_title])
-    when "show"
-      @post.show = Show.create(:name => post_params[:media_title])
+    case params[:media_type]
+    when 'movie'
+      @post.build_movie(name: post_params[:title])
+    when 'game'
+      @post.build_game(name: post_params[:title])
+    when 'show'
+      @post.build_show(name: post_params[:title])
     end
 
     if @post.save
@@ -30,10 +27,31 @@ class PostsController < ApplicationController
     end
   end
 
+
+   # DELETE /posts/1 or /posts/1.json
+   def destroy
+    @post = Post.find(params[:id])
+    @post.destroy
+      redirect_to profile_path(@post), notice: "Post was successfully destroyed." 
+      head :no_content 
+    end
+ 
+
+  
+
   private
 
-  def post_params
-    # Define your strong parameters for the post
-    params.require(:post).permit(:media_title, :stars, :description, :media_type)
+  def set_post
+    @post = Post.find(params[:id])
   end
+
+  def post_params
+    params.require(:post).permit(:media_name, :stars, :description)
+  end
+
+
+
+def record_not_found
+  redirect_to products_path, alert: 'No such media'
+end
 end
