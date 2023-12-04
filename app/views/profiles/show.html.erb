@@ -12,10 +12,20 @@
 
     <% @posts.each do |post| %>
       <div class="playing-card">
-        <div class="post-wrapper">
-          <h2><%= link_to post.id, post_path(post) %></h2>
-          <p>Description: <%= post.description %></p>
-          <p>Stars: <%= post.stars %></p>
+      <div class="post-wrapper">
+        <% if post.game%>
+      <h2 class='whitelink'><%= link_to post.game.name, post_path(post),class: 'whitelink' %></h2>
+      <% elsif post.movie%>
+       <h2 class='whitelink'><%= link_to post.movie.name, post_path(post),class: 'whitelink' %></h2>
+      <% elsif post.show%>
+      <h2 class='whitelink'><%= link_to post.show.name, post_path(post), class: 'whitelink' %></h2>
+       <% else %>
+     <h2 class='whitelink'><%= link_to post.id, post_path(post) %></h2>
+      <%end %>
+        <p>Description: <%= post.description %></p>
+        <p>Stars: <%= post.stars %> </p>
+        <!-- Add other attributes as needed -->
+
         </div>
       </div>
     <% end %>

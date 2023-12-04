@@ -1,0 +1,48 @@
+
+
+/* Styling for the container wrapping authentication section */
+.github-container {
+    padding: 10px;
+    border-radius: 5px;
+    margin: 2rem;
+    display: flex;
+    gap: 10px;
+}
+.github-container p {
+    font-size: medium;
+}
+.col-md-4 {
+    margin-top: 10px; /* Add some top margin for spacing */
+}
+
+/* Style the buttons within the columns */
+.top-bar-btn {
+    padding: 10px 15px; /* Adjust padding as needed */
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: small;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+    flex-direction: row;
+    justify-content: space-between;
+    margin-right: 40px;
+}
+.guest-text{
+    justify-content: left;
+}
+
+/* Style the buttons on hover */
+.top-bar-btn:hover {
+    background-color: #258CD1;
+    color: white;
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* On screens with a maximum width of 768px, stack divisions vertically */
+    .container {
+        margin: 10px;
+    }
+}

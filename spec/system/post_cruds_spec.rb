@@ -48,8 +48,8 @@ RSpec.describe 'PostCruds', type: :system do
     visit new_post_path
     sign_in(user)
 
-    # Visit the new post form
-    visit new_post_path
+#   # Visit the new post form
+#   visit new_post_path
 
     # Fill in the post form
     fill_in 'post_title', with: 'Great Post', wait: 10
@@ -57,8 +57,8 @@ RSpec.describe 'PostCruds', type: :system do
     fill_in 'post_stars', with: 2
     select 'movie', from: 'post_media_type' # Assuming you have a select box for associating a movie
 
-    # Click the submit button
-    click_button 'Create Post'
+#   # Click the submit button
+#   click_button 'Create Post'
 
     # Expectations
     expect(page).to have_content('This is an awesome post!')

@@ -46,12 +46,12 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:name, :stars, :description)
+    params.require(:post).permit(:media_name, :stars, :description)
   end
 
 
 
 def record_not_found
-  redirect_to products_path, alert: 'No such toy'
+  redirect_to products_path, alert: 'No such media'
 end
 end
