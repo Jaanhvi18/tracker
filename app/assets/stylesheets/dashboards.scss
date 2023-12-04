@@ -67,6 +67,31 @@
     word-wrap: break-word; /* This ensures long words will wrap and not overflow */
   }
 
+
+.button {
+    display: inline-block;
+    padding: 10px 20px; /* Adjust the padding to your preferred size */
+    background-color: #3498DB; /* Button background color */
+    color: #fff; /* Text color */
+    text-decoration: none; /* Remove the default link underline */
+    border: 1px solid #3498DB; /* Button border color */
+    border-radius: 5px; /* Rounded corners for the button */
+    font-weight: bold; /* Make the text bold */
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition on hover */
+    margin: 1%;
+}
+.button:hover {
+    background-color: #258CD1; /* Change background color on hover */
+    color: #fff; /* Change text color on hover */
+}
+
+/* Responsive Styles */
+@media screen and (max-width: 768px) {
+    /* On screens with a maximum width of 768px, stack divisions vertically */
+    .content {
+        flex-direction: column;
+    }
+}
   .post-wrapper > * {
     max-width: 100%; /* Ensures that all children fit within the parent's width */
   }
