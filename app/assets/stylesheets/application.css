@@ -26,6 +26,12 @@
     box-sizing: border-box;
 }
 
+body{
+    display: flex;
+    flex: 1;
+    justify-content: speace-between;
+    min-height: 0;
+}
 /* To also remove the blue coloring when the button is clicked or focused */
 .btn-primary:focus, .btn-primary:active {
     box-shadow: none;
