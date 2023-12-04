@@ -1,6 +1,6 @@
-# frozen_string_literal: true
-
 class Show < ApplicationRecord
-  has_many :posts
-  validates :name, presence: true
+    has_many :posts
+    validates :name , presence: true
+    
+    attr_accessor :name
 end
