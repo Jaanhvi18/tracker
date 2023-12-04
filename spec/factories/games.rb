@@ -4,6 +4,6 @@
 FactoryBot.define do
   factory :game do
     name { "Default Game Name" } # Ensure this is set
-    # other game attributes...
+    
   end
 end
