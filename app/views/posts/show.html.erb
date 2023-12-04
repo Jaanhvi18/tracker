@@ -6,11 +6,9 @@
         <%= render partial: 'shared/movie_partial', locals: { post: @post } %>
       <% elsif @post.game.present? %>
         <%= render partial: 'shared/game_partial', locals: { post: @post } %>
-
       <% elsif @post.show.present? %>
         <%= render partial: 'shared/show_partial', locals: { post: @post } %>
       <% else %>
-        <!-- Handle the case when none of the keys are present -->
       <% end %>
       
     <div class="text-box right-division">
