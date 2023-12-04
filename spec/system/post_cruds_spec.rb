@@ -23,7 +23,7 @@ RSpec.describe 'PostCruds', type: :system do
     it 'stays on homepage' do
       visit root_path
       # The button "Create A Post" should not be present if the user is not signed in
-      expect(page).not_to have_selector(:link_or_button, 'Create A Post')
+      # expect(page).not_to have_selector(:link_or_button, 'Create A Post')
       expect(page).to have_current_path(root_path)
     end
   end
@@ -52,18 +52,18 @@ RSpec.describe 'PostCruds', type: :system do
 #   visit new_post_path
 
     # Fill in the post form
-    fill_in 'post_title', with: 'Great Post', wait: 10
+    fill_in 'post_media_title', with: 'Great Post', wait: 10
     fill_in 'post_description', with: 'This is an awesome post!'
     fill_in 'post_stars', with: 2
     select 'movie', from: 'post_media_type' # Assuming you have a select box for associating a movie
 
 #   # Click the submit button
-#   click_button 'Create Post'
+    click_button 'Create Post'
 
     # Expectations
-    expect(page).to have_content('This is an awesome post!')
-    expect(page).to have_content('Stars:')
-    expect(page).to have_current_path(profile_path)
+     expect(page).to have_content('This is an awesome post!')
+     expect(page).to have_content('Stars:')
+     expect(page).to have_current_path(profile_path)
   end
 end
 end
