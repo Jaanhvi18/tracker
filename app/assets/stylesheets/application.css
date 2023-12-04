@@ -17,10 +17,90 @@
     background: none; /* Remove the background color */
     border: none; /* Remove the border */
     box-shadow: none; /* Remove any shadow */
+
+
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
 /* To also remove the blue coloring when the button is clicked or focused */
 .btn-primary:focus, .btn-primary:active {
     box-shadow: none;
+}
+
+/* General Container for Centring and Padding */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+/* Links */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+p {
+    margin-bottom: 1rem;
+}
+
+/* Modernizing Buttons */
+button,
+input[type="submit"],
+input[type="button"] {
+    background-color: #3498db;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+    white-space: nowrap;
+}
+
+button:hover,
+input[type="submit"]:hover,
+input[type="button"]:hover {
+    background-color: #2874a6;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+
+}
+
+/* Modernizing the Top Bar */
+.top-bar {
+    background-color: #3498db;
+    color: #ffffff;
+    padding: 10px 0;
+    text-align: center;
+}
+
+
+/* Adding modern shadow to card-like elements */
+.card {
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    padding: 20px;
+    margin-bottom: 1rem;
 }
 
