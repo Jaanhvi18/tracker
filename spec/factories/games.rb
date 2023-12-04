@@ -3,8 +3,7 @@
 # spec/factories/games.rb
 FactoryBot.define do
   factory :game do
-    # Define attributes for game
-    # Example:
-    # name { "Some Game Name" }
+    name { "Default Game Name" } # Ensure this is set
+    # other game attributes...
   end
 end

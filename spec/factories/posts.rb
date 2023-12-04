@@ -3,16 +3,16 @@
 # spec/factories/posts.rb
 FactoryBot.define do
   factory :post do
-    # Define common attributes for post
-    # Example:
-    # content { "Some post content" }
-
+    association :user
+    description { "Post Description" }
+    stars { 5 }  # Example, set this as per your requirement
+    
     # Define associations
-    association :movie, factory: :movie
-    association :game, factory: :game
-    association :show, factory: :show
+    association :movie, factory: :movie, optional: true
+    association :game, factory: :game, optional: true
+    association :show, factory: :show, optional: true
 
-    # You can also add traits to create posts for specific associations
+    # Traits for each media type
     trait :with_movie do
       movie
       game { nil }
@@ -20,10 +20,13 @@ FactoryBot.define do
     end
 
     trait :with_game do
-      movie { hello }
+      movie { nil }
       game
       show { nil }
     end
+
+
+
 
     trait :with_show do
       movie { nil }

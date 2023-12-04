@@ -17,6 +17,22 @@ RSpec.describe 'PostCruds', type: :system do
   # =
   let!(:user) { create(:user) }
 
+  let!(:user) { create(:user) }
+
+  context 'when user is not logged in' do
+    it 'stays on homepage' do
+      visit root_path
+      # The button "Create A Post" should not be present if the user is not signed in
+      expect(page).not_to have_selector(:link_or_button, 'Create A Post')
+      expect(page).to have_current_path(root_path)
+    end
+  end
+
+  context 'when user is logged in' do
+    before do
+      sign_in(user)
+    end
+
   it 'stays on homepage if user not logged in' do
     if @current_user.nil?
       visit root_path
@@ -24,8 +40,12 @@ RSpec.describe 'PostCruds', type: :system do
       expect(page).to have_current_path(root_path)
     end
   end
+
+
+
   it 'creates a post and associates it with a movie' do
     # Log in the user
+    visit new_post_path
     sign_in(user)
 
     # Visit the new post form
@@ -45,4 +65,5 @@ RSpec.describe 'PostCruds', type: :system do
     expect(page).to have_content('Stars:')
     expect(page).to have_current_path(profile_path)
   end
+end
 end
