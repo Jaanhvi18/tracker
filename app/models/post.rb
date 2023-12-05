@@ -33,7 +33,7 @@ class Post < ApplicationRecord
   end
 
   def media_type_name
-    return movie if movie.present?
+    return movie.name if movie.present?
     return game.name if game.present?
     return show.name if show.present?
     'None' # or some default value if no media type is associated
