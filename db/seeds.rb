@@ -51,17 +51,17 @@ game = Game.find_or_create_by!(name: game_name) do |g|
 end
 
   # Create a post
-  post = Post.new(user: a, description: 'lowkey kinda mid', movie: movie, media_title:movie_name)
-  post[:stars] = 4
-  post.save!
+  post_movie = Post.new(user: a, description: 'lowkey kinda mid', movie: movie, media_title:movie_name)
+  post_movie[:stars] = 4
+  post_movie.save!
 
-  post = Post.new(user: a, description: 'Amazing show', show: show, media_title:show_name)
-  post[:stars] = 5
-  post.save!
+  post_show= Post.new(user: a, description: 'Amazing show', show: show, media_title:show_name)
+  post_show[:stars] = 5
+  post_show.save!
 
-  post = Post.new(user: a, description: 'Amazing show', game: game, media_title:game_name)
-  post[:stars] = 2
-  post.save!
+  post_game= Post.new(user: a, description: 'Amazing show', game: game, media_title:game_name)
+  post_game[:stars] = 2
+  post_game.save!
 
   # Movies
 movie_name_b = "Space Odyssey"
@@ -94,15 +94,15 @@ end
 
 # Posts for User b
 post_movie_b = Post.new(user: b, description: 'Intriguing and deep', movie: movie_b, media_title:movie_name_b)
-post[:stars] = 5
+post_movie_b[:stars] = 5
 post_movie_b.save!
 
 post_show_b = Post.new(user: b, description: 'Thrilling narrative', show: show_b, media_title: show_name_b)
-post[:stars] = 3
+post_show_b[:stars] = 3
 post_show_b.save!
 
 post_game_b = Post.new(user: b, description: 'Could be better', game: game_b, media_title: game_name_b)
-post[:stars] = 2
+post_game_b[:stars] = 2
 post_game_b.save!
 
 # Movies
@@ -136,15 +136,15 @@ end
 
 # Posts for User c
 post_movie_c = Post.new(user: c, description: 'Absolutely stunning', movie: movie_c, media_title:movie_name_c)
-post[:stars] = 5
+post_movie_c[:stars] = 5
 post_movie_c.save!
 
 post_show_c = Post.new(user: c, description: 'Good but lacks depth', show: show_c, media_title:show_name_c)
-post[:stars] = 3
+post_show_c[:stars] = 3
 post_show_c.save!
 
 post_game_c = Post.new(user: c, description: 'Engaging gameplay', game: game_c, media_title:game_name_c)
-post[:stars] = 4
+post_game_c[:stars] = 4
 post_game_c.save!
 
 

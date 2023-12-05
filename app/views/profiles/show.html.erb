@@ -10,7 +10,7 @@
       <div class="post-wrapper">
      <h2 class='whitelink'><%= link_to post.media_title, post_path(post) %></h2>
         <p>Description: <%= post.description %></p>
-        <p>Stars: <%= post.stars %> </p>
+        <p>Stars: <%= post[:stars] %>/5 </p>
         <!-- Add other attributes as needed -->
 
         </div>
