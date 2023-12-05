@@ -13,7 +13,6 @@ class PostsController < ApplicationController
     @media_type = @params.delete(:media_type)
 
     @post = current_user.posts.build(@params)
-    debugger
     @post[:stars] = @params[:stars].to_i
     case @media_type
     when 'movie'
