@@ -5,17 +5,9 @@
     <% if @post.movie.present? %>
         <%= render partial: 'commons/movie_partial', locals: { post: @post } %>
       <% elsif @post.game.present? %>
-<<<<<<< HEAD
-        <%= render partial: 'shared/game_partial', locals: { post: @post } %>
-      <% elsif @post.show.present? %>
-        <%= render partial: 'shared/show_partial', locals: { post: @post } %>
-      <% else %>
-=======
         <%= render partial: 'commons/game_partial', locals: { post: @post } %>
-
       <% elsif @post.show.present? %>
         <%= render partial: 'commons/show_partial', locals: { post: @post } %>
->>>>>>> 604b481b931c89880fd803779058dcee5cad9d06
       <% end %>
       
     <div class="text-box right-division">
