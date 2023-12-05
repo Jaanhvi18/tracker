@@ -2,7 +2,6 @@
 <div class="container">
   <div class="speech-bubble">
     <div class="content-wrapper content">
-
     <% if @post.movie.present? %>
         <%= render partial: 'commons/movie_partial', locals: { post: @post } %>
       <% elsif @post.game.present? %>
@@ -13,7 +12,7 @@
       <% end %>
       
     <div class="text-box right-division">
-      <p><%= @post.description %></p>
+      <p><%= @post[:description] %></p>
     </div>
     </div>
   </div>

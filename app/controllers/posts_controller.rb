@@ -9,15 +9,19 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.build(post_params)
+    @params = post_params
+    @media_type = @params.delete(:media_type)
 
-    case params[:media_type]
+    @post = current_user.posts.build(@params)
+    debugger
+    @post[:stars] = @params[:stars].to_i
+    case @media_type
     when 'movie'
-      @post.build_movie(name: post_params[:title], stars: post_params[:stars])
+      @post.build_movie(name: @params[:media_title])
     when 'game'
-      @post.build_game(name: post_params[:title], stars: post_params[:stars])
+      @post.build_game(name: @params[:media_title])
     when 'show'
-      @post.build_show(name: post_params[:title], stars: post_params[:stars])
+      @post.build_show(name: @params[:media_title])
     end
 
     if @post.save
@@ -46,7 +50,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:media_title, :stars, :description)
+    params.require(:post).permit(:media_title, :stars, :description, :media_type)
   end
 
 

@@ -4,8 +4,8 @@
     <div class="post">
       <div class="post-title">
         <%= link_to post.media_title, post_path(post), class: 'whitelink'%>
-        <p> Description: <%= post.description%> <p>
-        <p> Rating: <%= post.stars %> / 5 <p>
+        <p> Description: <%= post[:description] %> <p>
+        <p> Rating: <%= post[:stars] %> / 5 <p>
       </div>
     </div>
   <% end %>
