@@ -1,0 +1,13 @@
+.logo-group {
+    display: flex;
+    flex-direction: row; /* Aligns children in a horizontal row */
+    align-items: center; /* Vertically centers the items in the container */
+    justify-content: flex-start; /* Aligns items to the left */
+  }  
+  .logo {
+    margin-left: 10px; /* Adjust the spacing as needed */
+  }  
+  .logo h1{
+    size: 10em;
+  }
+    
