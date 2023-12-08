@@ -37,7 +37,7 @@ Please update this section as we approve changes to the main branch
 
 Please update this branch with the progress being made by you (and your partner)
 
-### Iteration Week 1
+### Iteration 1
 
 #### Brian + Lex - Progress
 
@@ -64,7 +64,7 @@ Please update this branch with the progress being made by you (and your partner)
 #### Deployment 
   Link to view our deployment:  https://empty-violet-1097.fly.dev/
 
-### Iteration Week 2
+### Iteration 2
 
 #### Brian + Lex - Progress
 - [x] worked on views for the following
@@ -87,6 +87,25 @@ Please update this branch with the progress being made by you (and your partner)
   - [x] Removed review model, instead opted for a post model and comments to include in posts
   - [x] set up the relationships between the models and validations
 
+### Iteration 3
+
+#### Brian + Lex - Progress
+- [x] worked on views for the following
+    - Dashboard index view
+    - posts show view
+    - new post form view
+    - profile show view
+- [x] tests for the general naviagtion between pages
+- [x] Gallery routes, views, and model
+- [x] File organization and cleanup (unused files and poorly set up directories)
+- [x] Partials for views
+- [x] Seeding example users and posts
+- [ ] Changed and edited controllers for post and gallery
+
+#### Cris + Edna + Jaanhvi - Progress
+  - [x] Wrote tests to get up to 95% coverage
+  - [x] Tested controllers
+  - [x] cleanup files that are not being used
 ### Resources:
 - shell script automated terminal command: source git.sh
 - export GITHUB_APP_ID="1c6625a9cb4a6834e127"
