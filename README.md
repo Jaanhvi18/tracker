@@ -104,8 +104,11 @@ Please update this branch with the progress being made by you (and your partner)
 
 #### Cris + Edna + Jaanhvi - Progress
   - [x] Wrote tests to get up to 95% coverage
-  - [x] Tested controllers
-  - [x] cleanup files that are not being used
+  - [x] Tested controllers (Post controller and User controller)
+  - [x] Generated Rspec:Request Test files and deleted Rspec:Controller files
+  - [x] Removed unused code that wasn't tested for
+  - [x] Got rid of individual entertainment model controllers since their creation was done via a Post model
+  - [x] Added filters and implemented SimpleCov with rails option.
 ### Resources:
 - shell script automated terminal command: source git.sh
 - export GITHUB_APP_ID="1c6625a9cb4a6834e127"
